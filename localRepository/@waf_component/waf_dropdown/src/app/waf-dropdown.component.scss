@@ -1,0 +1,15 @@
+.item-selected{
+    
+}
+.content{
+    width:95%;
+    float:left;
+    height:24px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.content:hover{
+    overflow: visible;   
+
+}

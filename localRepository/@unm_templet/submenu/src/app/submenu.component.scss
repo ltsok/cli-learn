@@ -1,0 +1,72 @@
+.submenu {
+
+  // submenu变量
+  --submenu-first-padding: 26px;
+  --submenu-second-padding: 20px;
+  --submenu-first-height: 40px;
+  --submenu-second-height: 32px;
+
+  position: fixed;
+  width: var(--waf-submenu-width);
+  top: var(--waf-submenu-top);
+  bottom: 0px;
+  background-color: var(--waf-primary-color-1);
+  color: var(--waf-primary-color-2);
+  font-size: 13px;
+  margin: 0;
+  padding: 38px 0 0 0;
+}
+
+.submenu .first-menu{
+  list-style-type: none;
+  line-height: var(--submenu-first-height);
+  padding-left: var(--submenu-first-padding);
+}
+
+.submenu .first-menu ul{
+  padding: 0px;
+}
+
+.submenu .first-menu .title{
+  display: block;
+  margin-left: calc(-1 *var(--submenu-first-padding));
+  padding-left: calc(var(--submenu-first-padding));
+}
+
+.submenu .first-menu .title:hover{
+  cursor: pointer;
+  color: var(--waf-ornament-color-2);
+}
+
+.submenu .first-menu .second-menu{
+  list-style-type: none;
+  margin-left: calc(var(--submenu-first-padding) * -1);
+  padding-left: calc(var(--submenu-first-padding) + var(--submenu-second-padding));
+  height: var(--submenu-second-height);
+  line-height: var(--submenu-second-height);
+}
+
+.submenu .first-menu .second-menu .title{
+  display: block;
+  margin-left: calc(-1 *var(--submenu-first-padding) - var(--submenu-second-padding));
+  padding-left: calc(var(--submenu-first-padding) + var(--submenu-second-padding));
+}
+
+.submenu .first-menu .title i{
+  float: right;
+  padding-right: 10px;
+}
+
+.submenu .first-menu .second-menu .title:hover{
+  cursor: pointer;
+  color: var(--waf-ornament-color-2);
+}
+
+.submenu-group-selected{
+  color: var(--waf-ornament-color-2);
+}
+
+.submenu-selected{
+  background-color: var(--waf-ornament-color-1);
+  font-weight: bold;
+}

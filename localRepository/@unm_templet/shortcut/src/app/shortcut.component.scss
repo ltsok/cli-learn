@@ -1,0 +1,81 @@
+.shortcut {
+  height:  var(--waf-shortcut-height);
+  background-color: var(--waf-primary-color-1);
+}
+
+.shortcut > img {
+  position: fixed;
+  top: 15px;
+  left: 28px;
+  width: 145px;
+}
+
+.shortcut .waffont {
+  font-size: 18px;
+}
+
+.shortcut .fhfont {
+  font-size: 18px;
+}
+
+.shortcut .menu-sc {
+  float: right;
+  margin: 10px 30px 0 0;
+}
+
+.shortcut .menu-sc .user-name {
+  margin-left: 10px;
+  font-family: MicrosoftYaHei;
+  font-style: normal;
+  color: var(--waf-primary-color-2);
+  font-size: 16px;
+}
+
+.shortcut .menu-sv {
+  float: right;
+  margin: 10px 10px 0 0;
+}
+
+.shortcut .menu-sv .tooltip{
+  background-color: var(--waf-primary-color-2);
+}
+
+.shortcut .menu-sv .menu-sv-icon {
+  margin-left: 16px;
+}
+
+.shortcut .menu-sv .menu-sv-icon:hover {
+  cursor:pointer;
+}
+
+.shortcut .menu-sv .menu-sv-icon .icon-group {
+  position: relative;
+}
+
+.shortcut .menu-sv .menu-sv-icon .icon-group .icon-primary {
+  position: relative;
+  font-size: 16px;
+  left: 1px;
+  bottom: 1px;
+}
+
+.shortcut .menu-sv .menu-sv-icon .icon-group .icon-secondary {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  left: 0px;
+}
+
+.shortcut .menu-sv .menu-sv-icon .icon-num {
+  font-size: 16px;
+  color: var(--waf-primary-color-2);
+  font-family: MicrosoftYaHei;
+  font-style: normal;
+  margin-left: 10px;
+}
+
+.shortcut .menu-sv .icon-split {
+  color: #868686;
+  margin-left: 8px;
+  margin-right: -8px;
+}

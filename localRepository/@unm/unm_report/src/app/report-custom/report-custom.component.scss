@@ -1,0 +1,91 @@
+$padding:5px 16px;
+$active:#eaf0fd;
+// sider
+.divider {
+  margin: 0;
+}
+
+.li-item {
+  margin: 0px;
+  padding: $padding;
+  height: 32px;
+}
+
+.li-item:hover {
+  cursor: default;
+  background-color: $active;
+}
+
+.li-item a {
+  margin-left: 16px;
+}
+
+.selected {
+  background-color: $active;
+}
+
+// right
+.spliter {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 15px;
+  background-color: #F0F2F5;
+}
+
+.conditions {
+  height: 48px;
+  padding: $padding;
+}
+
+.conditions button {
+  background-color: #52aeff;
+  border-color: #52aeff;
+  width: 80px;
+}
+
+.grid-tool-box {
+  margin: 0px;
+  padding: 0 16px;
+  height: 30px;
+}
+
+.grid-tool-box a {
+  margin-left: 16px;
+}
+
+.grid-tool-box span {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.actived-tool {
+  color: #999999;
+}
+
+.col-set-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-box {
+  padding: $padding;
+}
+
+::ng-deep .k-grid-table>tbody>tr:hover {
+  background-color: rgb(132, 196, 255); // height: 60px;
+}
+
+// 编辑模式
+.editBox {
+  margin-bottom: 10px;
+}
+
+.editBox p {
+  margin-bottom: 0px;
+}
+
+.checkContainer {
+  padding: 0 10px;
+}

@@ -1,0 +1,41 @@
+.menu > ul{
+  padding-left: 252px;
+  font-size: 16px;
+}
+
+.menu-breadcrumb {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-breadcrumb .left{
+  display: none;
+  flex: 0 0 auto;
+  width: var(--waf-submenu-width);
+  background-color: var(--waf-primary-color-1);
+}
+
+.menu-breadcrumb .left .title{
+  position: fixed;
+  font-size: 16px;
+  padding-top: 20px;
+  padding-left: 25px;
+  width: var(--waf-submenu-width);
+  height: 60px;
+  background-color: var(--waf-secondary-color-11);
+  color: var(--waf-primary-color-2);
+}
+
+.menu-breadcrumb .right{
+  flex: 1 1 auto;
+  padding: 3px 0 0 16px;
+  background-color: var(--waf-secondary-color-21);
+}
+
+.menu-breadcrumb .right > span{
+  padding-right: 10px;
+}
+.menu-breadcrumb .right > nz-breadcrumb{
+  display: inline;
+}
+

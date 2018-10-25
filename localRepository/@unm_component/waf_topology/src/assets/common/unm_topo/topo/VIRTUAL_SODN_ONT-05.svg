@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<g>
+		<path fill="#FFFFFF" d="M3.421,30.115c-0.848,0-1.537-0.689-1.537-1.537V3.421c0-0.848,0.689-1.537,1.537-1.537h25.157
+			c0.848,0,1.537,0.689,1.537,1.537v25.157c0,0.848-0.689,1.537-1.537,1.537H3.421z"/>
+		<path fill="#AFAFAF" d="M28.578,2.269c0.636,0,1.153,0.517,1.153,1.153v25.157c0,0.636-0.517,1.153-1.153,1.153H3.422
+			c-0.636,0-1.153-0.517-1.153-1.153V3.422c0-0.636,0.517-1.153,1.153-1.153H28.578 M28.578,1.5H3.422C2.36,1.5,1.5,2.36,1.5,3.422
+			v25.157c0,1.061,0.86,1.922,1.922,1.922h25.157c1.061,0,1.922-0.86,1.922-1.922V3.422C30.5,2.36,29.64,1.5,28.578,1.5L28.578,1.5z
+			"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="16" y1="28.8433" x2="16" y2="3.1567">
+			<stop  offset="0" style="stop-color:#FF7F01"/>
+			<stop  offset="1" style="stop-color:#F05800"/>
+		</linearGradient>
+		<path fill="url(#SVGID_1_)" d="M3.422,28.843c-0.146,0-0.265-0.119-0.265-0.265V3.422c0-0.146,0.119-0.265,0.265-0.265h25.158
+			c0.146,0,0.264,0.119,0.264,0.265v25.157c0,0.146-0.118,0.265-0.264,0.265H3.422z"/>
+	</g>
+	<g>
+		<path fill="#FFFFFF" d="M18.517,10.26V21.74h-5.035V10.26H18.517 M20.33,8.448h-8.66v15.104h8.66V8.448L20.33,8.448z"/>
+		<g>
+			<g>
+				<polygon fill="#FFFFFF" points="7.85,9.089 10.795,11.695 7.85,14.302 				"/>
+				<rect x="4.187" y="11.217" fill="#FFFFFF" width="3.927" height="0.956"/>
+			</g>
+			<g>
+				<polygon fill="#FFFFFF" points="7.85,17.748 10.795,20.355 7.85,22.962 				"/>
+				<rect x="4.187" y="19.877" fill="#FFFFFF" width="3.927" height="0.956"/>
+			</g>
+			<g>
+				<polygon fill="#FFFFFF" points="24.15,9.089 21.205,11.695 24.15,14.302 				"/>
+				<rect x="23.886" y="11.217" fill="#FFFFFF" width="3.927" height="0.956"/>
+			</g>
+			<g>
+				<polygon fill="#FFFFFF" points="24.15,17.748 21.205,20.355 24.15,22.962 				"/>
+				<rect x="23.886" y="19.877" fill="#FFFFFF" width="3.927" height="0.956"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<g>
+		<rect x="1" y="1" fill="#BCBCBC" width="29.933" height="29.966"/>
+	</g>
+	<polygon fill="#FEFEFE" points="29.858,2.067 1.892,2.067 1.892,30.075 29.858,30.075 29.858,2.067 	"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="15.9665" y1="28.9" x2="15.9665" y2="3.0666">
+		<stop  offset="0" style="stop-color:#2CA539"/>
+		<stop  offset="1" style="stop-color:#009117"/>
+	</linearGradient>
+	<rect x="3.008" y="3.067" fill="url(#SVGID_1_)" width="25.917" height="25.833"/>
+	<g>
+		<rect x="8.467" y="7.067" fill="#ADADAD" width="5" height="1"/>
+		<rect x="14.508" y="7.067" fill="#ADADAD" width="4" height="1"/>
+		<rect x="19.508" y="7.067" fill="#ADADAD" width="4" height="1"/>
+	</g>
+	<rect x="7.498" y="5.515" fill="#FFFFFF" width="16.938" height="20.938"/>
+	<rect x="8.33" y="6.543" fill="#008512" width="4.94" height="0.954"/>
+	<rect x="14.28" y="6.543" fill="#008512" width="4.098" height="0.954"/>
+	<rect x="19.276" y="6.543" fill="#008512" width="4.041" height="0.954"/>
+	<rect x="9.498" y="9.546" fill="#0C9926" width="13" height="7"/>
+	<rect x="9.498" y="18.546" fill="#0C9926" width="13" height="7"/>
+	<g>
+		<path fill="#008512" d="M21.498,10.546v5h-11v-5H21.498 M22.498,9.546h-13v7h13V9.546L22.498,9.546z"/>
+		<path fill="#008512" d="M21.498,19.546v5h-11v-5H21.498 M22.498,18.546h-13v7h13V18.546L22.498,18.546z"/>
+	</g>
+	<g>
+		<g>
+			<g>
+				<rect x="11.5" y="10.535" fill="#9DCC99" width="1.049" height="1.021"/>
+				<rect x="12.513" y="11.551" fill="#9DCC99" width="1.049" height="1.021"/>
+				<rect x="13.494" y="12.535" fill="#9DCC99" width="1.049" height="1.021"/>
+			</g>
+			<rect x="16.517" y="10.535" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="17.53" y="11.551" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="18.511" y="12.535" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="19.493" y="13.52" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="20.475" y="14.504" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="14.507" y="13.52" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="15.489" y="14.504" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="10.44" y="14.504" fill="#9DCC99" width="1.049" height="1.021"/>
+		</g>
+		<g>
+			<g>
+				<rect x="11.5" y="19.535" fill="#9DCC99" width="1.049" height="1.021"/>
+				<rect x="12.513" y="20.551" fill="#9DCC99" width="1.049" height="1.021"/>
+				<rect x="13.494" y="21.535" fill="#9DCC99" width="1.049" height="1.021"/>
+			</g>
+			<rect x="16.517" y="19.535" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="17.53" y="20.551" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="18.511" y="21.535" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="19.493" y="22.52" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="20.475" y="23.504" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="14.507" y="22.52" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="15.489" y="23.504" fill="#9DCC99" width="1.049" height="1.021"/>
+			<rect x="10.44" y="23.504" fill="#9DCC99" width="1.049" height="1.021"/>
+		</g>
+	</g>
+</g>
+</svg>

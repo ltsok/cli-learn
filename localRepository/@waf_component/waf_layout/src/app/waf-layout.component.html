@@ -1,0 +1,10 @@
+<div *ngFor="let row of layout" class="row-content" nz-row nzGutter="16">
+  <div style="margin:0 30px ;">
+    <div style="margin:20px  0 0 0 ;" *ngFor="let col of row.cols" nz-col nzSpan="{{col.width}}">
+      <div class="col-content">
+        <div *ngIf='col.title' class="title">{{col.title}}</div>
+        <div #eachDiv id="{{col.id}}"></div>
+      </div>
+    </div>
+  </div>
+</div>

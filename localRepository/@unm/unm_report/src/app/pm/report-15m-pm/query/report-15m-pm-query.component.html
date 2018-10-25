@@ -1,0 +1,32 @@
+<div class="pm-15m">
+  <nz-tabset [nzType]="'card'" [nzSelectedIndex]="selectedIndex">
+    <nz-tab *ngFor="let tab of tabs;let i = index" [nzTitle]="titleTemplate" [nzDisabled]="i==0&&mainTabDisabled">
+      <ng-template #titleTemplate>
+        <ng-container *ngIf="i==0">{{ tab }}</ng-container>
+        <ng-container *ngIf="i==1">{{ tab }}<i class="anticon anticon-close" (click)="closeDetailTab()"></i></ng-container>
+      </ng-template>
+      <ng-container *ngIf="i==0">
+        <div style="width:100%;" id="15mMainTable">
+          <waf-datatable [id]="'pm-15m'" [style]="{'height':'510px'}" [hasAdd]="true" [hasExport]="true" [hasColConfig]="true" [hasFilter]="true"
+                         [hasBatchOper]="true" (onExport)="doExport($event)"
+                         (onUserDefCmd)="onUserDefCmd($event)"
+                         (onAdd)="onAdd($event)" (onCommandClicked)="onCommandClicked($event)"
+                         (onPageIndexChanged)="onPagerChange($event)">
+          </waf-datatable>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i==1">
+        <div style="width:100%;" id="15mDetailTable">
+          <waf-datatable [id]="'pm-15m-detail'" [style]="{'height':'531px'}" [hasExport]="true" (init)="onInit($event);" (onExport)="doDetailExport($event)"
+                         (onPageIndexChanged)="onDetailPagerChange($event)">
+            <waf-datatable-toolbar>
+              <nz-select style="width: 120px;" [(ngModel)]="selectedTime" nzPlaceHolder='--请选择--' [nzSize]='"small"'>
+                <nz-option *ngFor="let time of detailTimes" [nzLabel]="time.label" [nzValue]="time"></nz-option>
+              </nz-select>
+            </waf-datatable-toolbar>
+          </waf-datatable>
+        </div>
+      </ng-container>
+    </nz-tab>
+  </nz-tabset>
+</div>

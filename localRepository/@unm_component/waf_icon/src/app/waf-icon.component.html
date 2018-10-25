@@ -1,0 +1,8 @@
+<div *ngIf="isCenter" [class.blink]="_isBlink" [ngStyle]="_style">
+  <i [ngStyle]="mainIconStyle" class="fhfont {{mainIcon}}"></i>
+  <i *ngFor="let item of _aroundIcons" [ngStyle]="item.style" class="fhfont {{item.class}}"></i>
+</div>
+<div *ngIf="!isCenter" [ngStyle]="_style">
+  <i #mainIconEl [ngStyle]="mainIconStyle" class="fhfont {{mainIcon}}"></i>
+  <i *ngFor="let item of _aroundIcons" [ngStyle]="item.style" class="fhfont {{item.class}}"></i>
+</div>

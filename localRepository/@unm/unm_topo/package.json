@@ -1,0 +1,17 @@
+{
+  "name": "@unm/unm_topo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "dependencies": {
+    "@progress/kendo-angular-l10n": "^1.2.0",
+    "@progress/kendo-angular-layout": "^3.1.2",
+    "@waf_service/context": "1.0.0",
+    "rxjs-compat": "^6.3.2",
+    "@unm_component/waf_topology": "1.0.0"
+  }
+}

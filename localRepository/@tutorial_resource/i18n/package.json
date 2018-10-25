@@ -1,0 +1,9 @@
+{
+  "name": "@tutorial_resource/i18n",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "i18n.xlsx",
+    "package.json"
+  ]
+}

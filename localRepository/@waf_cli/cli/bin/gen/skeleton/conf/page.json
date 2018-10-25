@@ -1,0 +1,8 @@
+{
+    "mapping": [
+        {"sdir":"/skeleton_page", "src":"xxx.component.ftl", "ddir":"/src/app{{page.path}}/{{page.name}}", "dest":"{{page.name}}.component.ts"},
+        {"sdir":"/skeleton_page", "src":"xxx.component.html.ftl", "ddir":"/src/app{{page.path}}/{{page.name}}", "dest":"{{page.name}}.component.html"},
+        {"sdir":"/skeleton_page", "src":"xxx.component.scss.ftl", "ddir":"/src/app{{page.path}}/{{page.name}}", "dest":"{{page.name}}.component.scss"}
+      ]
+    }
+    

@@ -1,0 +1,76 @@
+::ng-deep div.topo {
+  top: 103px;
+  overflow-y: auto;
+}
+
+ul {
+  color: black;
+  padding-left: 0px;
+  position: relative;
+}
+
+ul.detail>li {
+  margin-top: 10px;
+}
+
+ul.levels>li {
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  height: 30px;
+  color: black;
+}
+
+ul.levels>li>div:nth-child(1) {
+  height: 12px;
+  width: 12px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+ul.levels>li>div:nth-child(2) {
+  display: inline-block;
+  height: 30px;
+}
+
+ul>a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+div.single-alarm {
+  position: relative;
+  padding-top: 20px;
+  color: black;
+}
+
+div.single-alarm>a {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div.single-alarm>div {
+  border-left: 5px solid #f32727;
+  height: 40px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+div.single-alarm span {
+  margin-left: 10px
+}
+
+div.pro {
+  color: black;
+  margin-top: 20px;
+}
+
+div.pro>div {
+  margin-top: 10px;
+}
+
+div.pro>div>label {
+  margin-right: 10px;
+}

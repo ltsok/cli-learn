@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="box-info">
+    <div class="baseInfo">
+      <h4>{{'unm.ne.title'|translate}}</h4>
+      <div>
+        <div>
+          <div class="item"><label>{{'unm.ne.name'|translate}}：</label><span>{{neInfo.name}}</span></div>
+          <div class="item"><label>{{'unm.ne.ip'|translate}}：</label><span>{{neInfo.ip}}</span></div>
+        </div>
+        <div>
+          <div class="item"><label>{{'unm.ne.type'|translate}}：</label><span>{{neInfo.type}}</span></div>
+          <div class="item"><label>{{'unm.ne.level'|translate}}：</label><span>传输层</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-container">
+      <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" nzSize="small" [nzTabBarGutter]="0">
+        <nz-tab nzTitle="{{'unm.ne.front'|translate}}">
+          <box-info [neId]="neInfo.neId"></box-info>
+        </nz-tab>
+        <nz-tab nzTitle="{{'unm.ne.back'|translate}}">
+        </nz-tab>
+      </nz-tabset>
+    </div>
+  </div>
+</div>

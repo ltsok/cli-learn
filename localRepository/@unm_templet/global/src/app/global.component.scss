@@ -1,0 +1,38 @@
+/*蒙层*/
+#coverload{
+  display: none;
+}
+#graycover{
+  background: black;
+  opacity: 0.2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+}
+#loading{
+  font-size: 32px;
+  position: fixed;
+  top: 48%;
+  left: 48%;
+  z-index: 999999;
+}
+
+.go-top{
+  display: none;
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  box-shadow: 0 6px 12px 0 var(--waf-secondary-color-1);
+  cursor: pointer;
+  padding: 5px;
+  background-color: var(--waf-primary-color-3);
+  opacity: 0.8;
+}
+
+.go-top-active {
+  display: inline-block;
+  z-index: 999;
+}

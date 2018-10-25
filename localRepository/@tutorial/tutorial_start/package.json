@@ -1,0 +1,14 @@
+{
+  "name": "@tutorial/tutorial_start",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "dependencies": {
+    "@waf_service/context": "1.0.0",
+    "@tutorial_component/tutorial_editor": "1.0.0"
+  }
+}

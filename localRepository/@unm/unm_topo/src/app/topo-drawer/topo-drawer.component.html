@@ -1,0 +1,64 @@
+<nz-drawer #nzDrawer nzTitle="{{'unm.topo.drawer.title'|translate}}" [nzMaskStyle]="{opacity: 0}" nzPlacement="right"
+  [nzWidth]="385" [nzVisible]="visiable" (nzOnClose)="close()" [nzWrapClassName]="'topo'">
+  <div style="display: flex;justify-content: center;">
+    <nz-radio-group [(ngModel)]="radioValue">
+      <label (click)="isInfo=true" style="width: 90px;text-align: center;" nz-radio-button nzValue="info">{{'unm.topo.drawer.overview'|translate}}</label>
+      <label (click)="isInfo=false" style="width: 90px;text-align: center;" nz-radio-button nzValue="pro">{{'unm.topo.drawer.property'|translate}}</label>
+    </nz-radio-group>
+  </div>
+  <div *ngIf="isInfo">
+    <ul class="detail" style="list-style: none;">
+      <li><label>{{'unm.topo.drawer.NE_name'|translate}}：</label><span>{{ne.name?ne.name:''}}</span></li>
+      <li><label>{{'unm.topo.drawer.ip'|translate}}：</label><span>{{ne.ip?ne.ip:''}}</span></li>
+      <li><label>{{'unm.topo.drawer.device_type'|translate}}：</label><span>{{ne.neTypeName?ne.neTypeName:''}}</span></li>
+      <li><label>{{'unm.topo.drawer.in_level'|translate}}：</label><span>核心网</span></li>
+      <!-- <li><label>{{'unm.topo.drawer.in_area'|translate}}：</label><span>武汉市武昌区</span></li>
+      <a>{{'unm.topo.drawer.location_gis'|translate}}</a> -->
+    </ul>
+    <nz-divider style="font-size: 15px;font-weight: bold;" nzText="{{'unm.topo.drawer.ne_current_alarm'|translate}}"
+      nzOrientation="left" [nzDashed]="true"></nz-divider>
+    <ul class="levels">
+      <li>
+        <div style="background-color: #f32727"></div>
+        <div>3</div>
+      </li>
+      <li>
+        <div style="background-color: #fa7821"></div>
+        <div>3</div>
+      </li>
+      <li>
+        <div style="background-color: #ffcc00"></div>
+        <div>3</div>
+      </li>
+      <li>
+        <div style="background-color: #1890ff"></div>
+        <div>2</div>
+      </li>
+      <a>{{'unm.topo.drawer.alarm_detail'|translate}}</a>
+    </ul>
+    <nz-divider style="font-size: 15px;font-weight: bold;" nzText="{{'unm.topo.drawer.single_alarm'|translate}}"
+      nzOrientation="left" [nzDashed]="true"></nz-divider>
+    <div class="single-alarm">
+      <a (click)="boxRouterClick()">{{'unm.topo.drawer.box_view'|translate}}</a>
+      <!-- <a>{{'unm.topo.drawer.box_view'|translate}}</a> -->
+      <div>
+        <div><label>{{'unm.topo.drawer.dish_name'|translate}}：</label><span>xxxxx</span> <span>({{'unm.topo.drawer.type'|translate}})</span>
+        </div>
+        <div><label>{{'unm.topo.drawer.box_name'|translate}}：</label><span>xxxxx</span> </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="pro" *ngIf="!isInfo">
+    <div><label>{{'unm.topo.drawer.ne_mask'|translate}}：</label><span>{{ne.mask?ne.mask:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.ne_gateway'|translate}}：</label><span>{{ne.gateway?ne.gateway:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.switch_no1'|translate}}：</label><span>{{ne.switch1?ne.switch1:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.switch_no2'|translate}}：</label><span>{{ne.switch2?ne.switch2:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.friend_name'|translate}}：</label><span>{{ne.friendName?ne.friendName:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.serial_number'|translate}}：</label><span>{{ne.serial?ne.serial:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.factory_name'|translate}}：</label><span>{{ne.factoryName?ne.factoryName:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.bureau_name'|translate}}：</label><span>{{ne.bureauName?ne.bureauName:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.remark'|translate}}：</label><span>{{ne.remark?ne.remark:''}}</span></div>
+    <div><label>{{'unm.topo.drawer.netin_time'|translate}}：</label><span>{{ne.netinTime?ne.netinTime:''}}</span></div>
+  </div>
+</nz-drawer>

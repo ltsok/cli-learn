@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_component/animate@1.0.0",
+        "scope": "@waf_component",
+        "escapedName": "@waf_component%2fanimate",
+        "name": "@waf_component/animate",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_component/animate@1.0.0",
+  "_id": "@waf_component/animate@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_component/animate",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_component/animate@1.0.0",
+    "scope": "@waf_component",
+    "escapedName": "@waf_component%2fanimate",
+    "name": "@waf_component/animate",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_component%2fanimate/-/animate-1.0.0.tgz",
+  "_shasum": "4b87003a3bde8f2ddc9d89fd7044702915319b02",
+  "_shrinkwrap": null,
+  "_spec": "@waf_component/animate@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "animate.css": "3.7.0"
+  },
+  "description": "animate模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "4b87003a3bde8f2ddc9d89fd7044702915319b02",
+    "tarball": "http://10.170.190.45:4873/@waf_component%2fanimate/-/animate-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_component/animate",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

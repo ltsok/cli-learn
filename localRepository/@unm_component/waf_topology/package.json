@@ -1,0 +1,13 @@
+{
+  "name": "@unm_component/waf_topology",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files":[
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "dependencies": {
+    "@ext/qunee": "1.0.0"
+  }
+}

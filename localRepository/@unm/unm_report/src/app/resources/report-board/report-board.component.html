@@ -1,0 +1,135 @@
+<div>
+  <!-- 查询条件 -->
+  <div class="contentBox">
+    <form nz-form [formGroup]="mainForm" [nzLayout]="'inline'">
+      <div nz-row nzType="flex" nzJustify="start" nzAlign="middle">
+        <div nz-col [nzMd]="{ span: 20, offset: 0 }" [nzLg]="{ span: 12, offset: 0 }" [nzXl]="{ span: 7, offset: 0 }">
+          <!-- 对象范围 -->
+          <nz-form-item>
+            <nz-form-label>{{"unm.report.conditions.objects" | translate}}</nz-form-label>
+            <nz-form-control>
+              <nz-tree-select style="width: 250px" [nzNodes]="objectsList" nzShowSearch nzCheckable nzPlaceHolder="{{'unm.report.conditions.all' | translate}}"
+                formControlName="objectId" (ngModelChange)="onObjectsChange($event)">
+              </nz-tree-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzMd]="{ span: 20, offset: 0 }" [nzLg]="{ span: 12, offset: 0 }" [nzXl]="{ span: 7, offset: 0 }">
+          <!-- 单盘类型 -->
+          <nz-form-item>
+            <nz-form-label>{{"unm.report.board.boardType" | translate}}</nz-form-label>
+            <nz-form-control>
+              <!-- <nz-select [nzMaxMultipleCount]="3" style="width: 250px" nzMode="multiple" nzPlaceHolder="{{'unm.report.conditions.all' | translate}}"
+                formControlName="selectType">
+                <nz-option *ngFor="let option of selectTypeList" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+              </nz-select> -->
+              <waf-dropdown [dropDownWidth]="'250px'" [dropdownOptions]="selectTypeList" formControlName="selectType"></waf-dropdown>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzMd]="{ span: 3, offset: 0 }" [nzLg]="{ span: 2, offset: 0 }" [nzXl]="{ span: 2, offset: 0 }">
+          <button nz-button nzType="primary" [nzLoading]="isQuerying" (click)="initQuery()">{{"unm.report.conditions.doQuery"
+            | translate}}</button>
+        </div>
+
+        <div nz-col [nzMd]="{ span: 11, offset: 0 }" [nzLg]="{ span: 3, offset: 0 }" [nzXl]="{ span: 2, offset: 0 }">
+          <!-- 更多条件 -->
+          <a (click)="open()">{{"unm.report.conditions.moreConditions" | translate}}>></a>
+        </div>
+        <nz-drawer [nzBodyStyle]="{ height: '400px' }" [nzWrapClassName]="'drawer_class'" [nzMaskStyle]="{'opacity':'0'}"
+          [nzClosable]="false" [nzWidth]="400" [nzVisible]="visible" (nzOnClose)="close()">
+          <!-- <form nz-form [nzLayout]="'horizontal'" formGroupName="moreForm"> -->
+          <!-- 单盘名 -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="7">{{"unm.report.board.boardName" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="17">
+              <input nz-input formControlName="boardName">
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 创建时间 -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="4">{{"unm.report.conditions.createdTime" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="20">
+              <nz-range-picker formControlName="dateRange" nzShowTime></nz-range-picker>
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 设备类型 -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="7">{{"unm.report.board.deviceType" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="17">
+              <!-- <nz-select [nzMaxMultipleCount]="3" style="width: 250px" nzMode="multiple" nzPlaceHolder="Please select" formControlName="selectType1">
+                <nz-option *ngFor="let option of selectTypeList1" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+              </nz-select> -->
+              <waf-dropdown [dropDownWidth]="'250px'" [dropdownOptions]="selectTypeList1" formControlName="selectType1"></waf-dropdown>
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 网元名 -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="7">{{"unm.report.ne.neName" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="17">
+              <input nz-input formControlName="neName">
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 网元IP -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="7">{{"unm.report.ne.neIP" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="17">
+              <input nz-input formControlName="neIP">
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 单盘序列号 -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="7">{{"unm.report.board.boardSN" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="17">
+              <input nz-input formControlName="boardSN">
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 维护状态 -->
+          <nz-form-item nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="7">{{"unm.report.conditions.manStatus" | translate}}</nz-form-label>
+            <nz-form-control nzSpan="17">
+              <nz-checkbox-group formControlName="manStatus"></nz-checkbox-group>
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 按钮 -->
+          <div nz-row nzType="flex" nzGutter="16" nzJustify="center" nzAlign="middle">
+            <div nz-col nzSpan="12" style="text-align: right;">
+              <button nz-button nzType="primary" [nzLoading]="isQuerying" (click)="initQuery();close()">{{"unm.report.conditions.doQuery"
+                | translate}}</button>
+            </div>
+            <div nz-col nzSpan="12">
+              <button nz-button nzType="default" (click)="close()">{{"unm.report.conditions.cancel" | translate}}</button>
+            </div>
+          </div>
+          <!-- </form> -->
+          <!-- <div class="footer">
+          </div> -->
+        </nz-drawer>
+      </div>
+    </form>
+  </div>
+
+  <div class="spliter"></div>
+
+  <!-- 统计图 -->
+  <div>
+    <nz-collapse [nzBordered]="false">
+      <nz-collapse-panel [ngStyle]="panel.customStyle" [nzHeader]="collapseHeaderTemplate" [nzActive]="panel.active"
+        [nzDisabled]="panel.disabled">
+        <report-chart-card [type]="TYPE" isfull="true" [dataFields]="chartData"></report-chart-card>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <ng-template #collapseHeaderTemplate style="padding-bottom: 0px;">
+      <span class="statisticHeader">{{"unm.report.grid.summary" | translate}}
+        <sub>{{total}}</sub> {{"unm.report.type.board" | translate}}</span>
+    </ng-template>
+  </div>
+
+  <div class="spliter"></div>
+
+  <!-- 展示表格 -->
+  <div class="contentBox">
+    <report-table [type]="TYPE" [data]="data" [total]="total" (onExport)="doExport($event)" (onPageIndexChanged)="onPagerChange($event)"></report-table>
+  </div>

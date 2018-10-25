@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<g>
+		<path fill="#FFFFFF" d="M2.12,31.576c-0.935,0-1.696-0.761-1.696-1.696V2.12c0-0.935,0.761-1.696,1.696-1.696h27.76
+			c0.935,0,1.696,0.761,1.696,1.696v27.76c0,0.935-0.761,1.696-1.696,1.696H2.12z"/>
+		<path fill="#AFAFAF" d="M29.88,0.848c0.701,0,1.272,0.571,1.272,1.272V29.88c0,0.701-0.571,1.272-1.272,1.272H2.12
+			c-0.701,0-1.272-0.571-1.272-1.272V2.12c0-0.701,0.571-1.272,1.272-1.272H29.88 M29.88,0H2.12C0.949,0,0,0.949,0,2.12V29.88
+			C0,31.051,0.949,32,2.12,32H29.88c1.171,0,2.12-0.949,2.12-2.12V2.12C32,0.949,31.051,0,29.88,0L29.88,0z"/>
+	</g>
+	<g>
+		<path fill="#C4C4C4" d="M2.121,30.172c-0.161,0-0.292-0.132-0.292-0.292V2.121c0-0.161,0.132-0.292,0.292-0.292h27.76
+			c0.161,0,0.291,0.132,0.291,0.292v27.759c0,0.161-0.131,0.292-0.291,0.292H2.121z"/>
+	</g>
+	<g>
+		<rect x="5.79" y="7.021" fill="#FFFFFF" width="7.375" height="19"/>
+		<g>
+			<rect x="16.249" y="10.146" fill="#FFFFFF" width="9.583" height="4.167"/>
+			<rect x="18.332" y="13.896" fill="#FFFFFF" width="5.333" height="4.75"/>
+			<rect x="20.499" y="18.229" fill="#FFFFFF" width="1.083" height="6.583"/>
+			<rect x="20.499" y="5.979" fill="#FFFFFF" width="1.083" height="3.333"/>
+			<g>
+				<line fill="#FFFFFF" x1="16.332" y1="7.063" x2="18.249" y2="8.979"/>
+				
+					<rect x="15.935" y="7.487" transform="matrix(0.7071 0.7071 -0.7071 0.7071 10.7358 -9.8769)" fill="#FFFFFF" width="2.711" height="1.068"/>
+			</g>
+			<g>
+				<line fill="#FFFFFF" x1="23.915" y1="8.979" x2="25.832" y2="7.063"/>
+				
+					<rect x="24.34" y="6.666" transform="matrix(0.7071 0.7071 -0.7071 0.7071 12.9569 -15.2391)" fill="#FFFFFF" width="1.068" height="2.711"/>
+			</g>
+		</g>
+		<g>
+			<rect x="6.832" y="9.146" fill="#AEAEAE" width="1.083" height="2.25"/>
+			<rect x="6.832" y="12.312" fill="#AEAEAE" width="1.083" height="1.083"/>
+			<rect x="6.832" y="14.396" fill="#AEAEAE" width="1.083" height="1.083"/>
+			<rect x="6.832" y="16.479" fill="#AEAEAE" width="1.083" height="2.167"/>
+			<rect x="6.832" y="19.688" fill="#AEAEAE" width="1.083" height="4.167"/>
+			<rect x="8.999" y="9.146" fill="#AEAEAE" width="3.083" height="2.167"/>
+			<rect x="8.999" y="13.229" fill="#AEAEAE" width="3.083" height="1.083"/>
+			<rect x="8.999" y="15.312" fill="#AEAEAE" width="3.083" height="1.083"/>
+			<rect x="8.999" y="17.438" fill="#AEAEAE" width="3.083" height="1.083"/>
+			<rect x="8.999" y="19.521" fill="#AEAEAE" width="3.083" height="1.083"/>
+			<rect x="8.999" y="21.646" fill="#AEAEAE" width="3.083" height="1.083"/>
+			<rect x="8.999" y="23.729" fill="#AEAEAE" width="3.083" height="1.083"/>
+		</g>
+	</g>
+</g>
+</svg>

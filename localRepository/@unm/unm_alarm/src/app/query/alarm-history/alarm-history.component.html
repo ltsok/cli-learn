@@ -1,0 +1,422 @@
+<div style="margin:0 10px;">
+  <!-- 查询条件div -->
+  <div class="query_condition">
+    <!-- 回显栏 -->
+    <div nz-row class="condition_row" style="margin-top:20px;margin-bottom:20px;border-bottom:1px solid lightgrey" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one">
+        <i class="icon fhfont fh-zhankaitiaojian1" style="color:#4290f7;margin-right:10px"></i>
+        已选：
+      </div>
+      <div nz-col nzSpan="22" style="float:left">
+        <div *ngFor="let item of conditionArray">
+          <waf-tag nzMode="closeable" [item]="item" (onClose)="conditionChange(item)"></waf-tag>
+        </div>
+        <div *ngIf="conditionArray.length != 0" style="float:left">
+          <button style="height:25px" nz-button nzType="primary" (click)="query()">查询</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- 选择模板行 -->
+    <div nz-row class="condition_row" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one"> 查询模板：</div>
+      <div nz-col nzSpan="22">
+        <nz-select style="width: 200px;" nzPlaceHolder="无" [(ngModel)]="selectedTemplate" (ngModelChange)="selectTemplate()">
+          <nz-option *ngFor="let option of alarmHistoryTemplates" [nzLabel]="option.templateName" [nzValue]="option"></nz-option>
+        </nz-select>
+      </div>
+    </div>
+    <!-- 告警级别选择行 -->
+    <div nz-row class="condition_row" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one"> 告警级别：</div>
+      <div nz-col nzSpan="22">
+        <div>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_level_0_checked" (nzCheckedChange)="alarmLevelSelectAllChange($event)">全部</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_level_1_checked" (nzCheckedChange)="alarmLevelSelectChange($event,'1')">紧急</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_level_2_checked" (nzCheckedChange)="alarmLevelSelectChange($event,'2')">主要</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_level_3_checked" (nzCheckedChange)="alarmLevelSelectChange($event,'3')">次要</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_level_4_checked" (nzCheckedChange)="alarmLevelSelectChange($event,'4')">提示</nz-tag>
+        </div>
+      </div>
+    </div>
+    <!-- 告警状态选择行 -->
+    <div nz-row class="condition_row" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one"> 告警状态：</div>
+      <div nz-col nzSpan="22">
+        <div>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_status_0_checked" (nzCheckedChange)="alarmStatusSelectAllChange($event)">全部</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_status_1_checked" (nzCheckedChange)="alarmStatusSelectChange($event,'1')">未确认未清除</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_status_2_checked" (nzCheckedChange)="alarmStatusSelectChange($event,'2')">已确认未清除</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_status_3_checked" (nzCheckedChange)="alarmStatusSelectChange($event,'3')">未确认已清除</nz-tag>
+          <nz-tag nzMode="checkable" [(nzChecked)]="alarm_status_4_checked" (nzCheckedChange)="alarmStatusSelectChange($event,'4')">已确认已清除</nz-tag>
+        </div>
+      </div>
+    </div>
+    <!-- 告警发生时间选择行 -->
+    <div nz-row class="condition_row" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one"> 发生时间：</div>
+      <div nz-col nzSpan="22">
+        <div style="float:left">
+          <div style="float:left">
+            <nz-tag nzMode="checkable" [(nzChecked)]="alarm_occur_time_0_checked" (nzCheckedChange)="alarmOccurTimeSelectChange($event,'0')">全部</nz-tag>
+            <nz-tag nzMode="checkable" [(nzChecked)]="alarm_occur_time_1_checked" (nzCheckedChange)="alarmOccurTimeSelectChange($event,'1')">最近1小时</nz-tag>
+            <nz-tag nzMode="checkable" [(nzChecked)]="alarm_occur_time_2_checked" (nzCheckedChange)="alarmOccurTimeSelectChange($event,'2')">最近24小时</nz-tag>
+            <nz-tag nzMode="checkable" [(nzChecked)]="alarm_occur_time_3_checked" (nzCheckedChange)="alarmOccurTimeSelectChange($event,'3')">最近3天</nz-tag>
+            <nz-tag nzMode="checkable" [(nzChecked)]="alarm_occur_time_4_checked" (nzCheckedChange)="alarmOccurTimeSelectChange($event,'4')">最近7天</nz-tag>
+            <nz-tag nzMode="checkable" [(nzChecked)]="alarm_occur_time_5_checked" (nzCheckedChange)="alarmOccurTimeSelectChange($event,'5')">自定义</nz-tag>
+          </div>
+          <div *ngIf="alarm_occur_time_5_checked" style="float:left">
+            <nz-range-picker [nzAllowClear]="false" [(ngModel)]="createTimeRange" nzShowTime></nz-range-picker>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- 告警源选择行 -->
+    <div nz-row class="condition_row" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one"> 告警源：</div>
+      <div nz-col nzSpan="6">
+        <div *ngIf='alarm_source_single_select'>
+          <nz-select nzShowSearch style="width: 380px;" nzPlaceHolder="请选择..." [(ngModel)]="alarmSourceValue_single">
+            <nz-option *ngFor="let neInfo of alarmSource_single_suggestions" [nzLabel]="neInfo.name+'  '+neInfo.ip" [nzValue]="neInfo"></nz-option>
+          </nz-select>
+        </div>
+        <div *ngIf='!alarm_source_single_select' (click)='alarmSourceMultipleOpen()'>
+          <input nz-input readonly="true" [(ngModel)]="alarmSourceValue_multiple">
+        </div>
+
+      </div>
+      <div nz-col nzSpan="2">
+        <div *ngIf='alarm_source_single_select'>
+          <nz-tag nzMode="default" (click)="switchAlarmSourceSelectStatus()">+多选</nz-tag>
+        </div>
+        <div *ngIf='!alarm_source_single_select'>
+          <nz-tag nzMode="default" (click)="switchAlarmSourceSelectStatus()">-单选</nz-tag>
+        </div>
+      </div>
+    </div>
+
+    <!-- 告警源多选弹框 -->
+    <nz-modal [nzBodyStyle]="{  'height': '600px'}" [(nzVisible)]="isAlarmSourceMultipleVisible" [nzClosable]="false" nzTitle="选择对象"
+      [nzFooter]=null>
+      <div nz-row class="condition_row" nzGutter="8">
+        <div nz-col nzSpan="4" class="condition_col_one"> 网元名称：</div>
+        <div nz-col nzSpan="20">
+          <div *ngIf="alarmSourceRadioValue == '1' ||alarmSourceRadioValue == '2' ">
+            <input nz-input [(ngModel)]="alarmSourceMultipleInputValue">
+          </div>
+          <div *ngIf="alarmSourceRadioValue == '3' ">
+            <input nz-input disabled="disabled" [(ngModel)]="alarmSourceMultipleInputValue">
+          </div>
+        </div>
+      </div>
+      <div nz-row class="condition_row" nzGutter="8">
+        <nz-radio-group [(ngModel)]="alarmSourceRadioValue">
+          <label nz-radio nzValue="1">按逻辑域</label>
+          <label nz-radio nzValue="2">按区域</label>
+          <label nz-radio nzValue="3">自定义</label>
+        </nz-radio-group>
+      </div>
+      <div class="alarm_source_content" style="height:400px">
+        <div byLoginZone *ngIf="alarmSourceRadioValue == '1'">
+          <nz-tree #nzTree2loginZone (nzCheckBoxChange)='treeCheckBoxChange()' [nzSearchValue]="alarmSourceMultipleInputValue" [nzCheckable]="true"
+            [(ngModel)]="nodes2loginZone" [nzShowLine]="true" [nzMultiple]="true">
+          </nz-tree>
+        </div>
+        <div byPosition *ngIf="alarmSourceRadioValue == '2'">
+          <nz-tree #nzTree2position (nzCheckBoxChange)='treeCheckBoxChange()' [nzSearchValue]="alarmSourceMultipleInputValue" [nzCheckable]="true"
+            [(ngModel)]="nodes2position" [nzShowLine]="true" [nzMultiple]="true">
+          </nz-tree>
+        </div>
+        <div byCustom *ngIf="alarmSourceRadioValue == '3'">待开发。</div>
+      </div>
+
+      <div nz-row class="condition_row" nzGutter="8" style="margin-top:40px">
+        <div nz-col nzSpan="6" class="condition_col_one"> 已选择：{{alarmSourceMultiNumber}}个</div>
+        <div nz-col nzSpan="3">
+          <nz-tag nzMode="default" (click)="alarmSourceMultipleReset()">重置</nz-tag>
+        </div>
+        <div nz-col nzSpan="9" nzOffset="6" style="float:left">
+          <div nz-col style="float:left">
+            <button nz-button nzType="default" (click)="confirmAlarmSourceMulti()">确定</button>
+          </div>
+          <div nz-col style="float:left">
+            <button nz-button nzType="default" (click)="cancelAlarmSourceMulti()">取消</button>
+          </div>
+
+        </div>
+      </div>
+
+    </nz-modal>
+
+
+    <!-- 告警代码选择行 -->
+    <div nz-row class="condition_row" nzGutter="8">
+      <div nz-col nzSpan="2" class="condition_col_one"> 告警代码：</div>
+      <div nz-col nzSpan="6">
+        <waf-dropdown [dropDownWidth]="'450px'" [dropdownOptions]="alarmCodeOptions" (onChange)="alarmCodeChange($event)" [(ngModel)]="alarmCodeValue"></waf-dropdown>
+      </div>
+      <div nz-col nzSpan="4" style="color:#4290f7;margin-left:80px" (click)="moreCondition()">更多条件>></div>
+    </div>
+    <div>
+      <nz-drawer [nzWrapClassName]="'drawer_class'" [nzMaskStyle]="{'opacity':'0'}" [nzWidth]="720" [nzVisible]="drawerVisible"
+        (nzOnClose)="close()">
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 告警类型：</div>
+          <div nz-col nzSpan="9">
+            <waf-dropdown [dropdownOptions]="alarmType_dropdownOptions" [(ngModel)]="select_alarm_type_options"></waf-dropdown>
+          </div>
+          <div nz-col nzSpan="12">
+            <label nz-checkbox [(ngModel)]="showDerivedAlm">显示衍生告警</label>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 持续时间：</div>
+          <div nz-col nzSpan="6">
+            <label style="margin-right:5px" nz-checkbox [(ngModel)]="checked_last_time"></label>
+            <nz-select style="width: 120px;" [(ngModel)]="selected_last_time_value" [nzDisabled]="!checked_last_time">
+              <nz-option *ngFor="let option of alarm_last_time_options" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+            </nz-select>
+          </div>
+          <div nz-col nzSpan="5">
+            <nz-input-number [(ngModel)]="dayValue" [nzStep]="1" [nzDisabled]="!checked_last_time"></nz-input-number>
+            <label>天</label>
+          </div>
+          <div nz-col nzSpan="5">
+            <nz-input-number [(ngModel)]="hourValue" [nzStep]="1" [nzDisabled]="!checked_last_time"></nz-input-number>
+            <label>小时</label>
+          </div>
+          <div nz-col nzSpan="5">
+            <nz-input-number [(ngModel)]="minuteValue" [nzStep]="1" [nzDisabled]="!checked_last_time"></nz-input-number>
+            <label>分钟</label>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 确认用户：</div>
+          <div nz-col nzSpan="21">
+            <waf-dropdown [dropdownOptions]="confirmuser_dropdownOptions" [(ngModel)]="select_confirm_user_options"></waf-dropdown>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 确认时间：</div>
+          <div nz-col nzSpan="21">
+            <nz-range-picker [nzAllowClear]="false" [(ngModel)]="confirmTimeRange" nzShowTime></nz-range-picker>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 清除时间：</div>
+          <div nz-col nzSpan="21">
+            <nz-range-picker [nzAllowClear]="false" [(ngModel)]="clearTimeRange" nzShowTime></nz-range-picker>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 清除类型：</div>
+          <div nz-col nzSpan="9">
+            <waf-dropdown [dropdownOptions]="cleartype_dropdownOptions" [(ngModel)]="select_clear_type_options"></waf-dropdown>
+          </div>
+          <div nz-col nzSpan="3" class="condition_col_one"> 清除用户：</div>
+          <div nz-col nzSpan="9">
+            <waf-dropdown [dropdownOptions]="clearuser_dropdownOptions" [(ngModel)]="select_clear_user_options"></waf-dropdown>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 客户信息：</div>
+          <div nz-col nzSpan="9">
+            <input nz-input [(ngModel)]="client_info">
+          </div>
+          <div nz-col nzSpan="3" class="condition_col_one"> 备注包含：</div>
+          <div nz-col nzSpan="9">
+            <input nz-input [(ngModel)]="remark_info">
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 维护状态：</div>
+          <div nz-col nzSpan="21">
+            <label nz-checkbox [(ngModel)]="engineering_state_checked">工程态</label>
+            <label nz-checkbox [(ngModel)]="un_engineering_state_checked">非工程态</label>
+          </div>
+        </div>
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="3" class="condition_col_one"> 震荡状态：</div>
+          <div nz-col nzSpan="21">
+            <label nz-checkbox [(ngModel)]="shock_checked">震荡</label>
+            <label nz-checkbox [(ngModel)]="un_shock_checked">非震荡</label>
+          </div>
+        </div>
+
+        <div class="footer">
+          <button style="margin-left:40%" type="button" (click)="query()" class="ant-btn ant-btn-primary">
+            <span>查询</span>
+          </button>
+          <button style="margin-left: 10px;" type="button" (click)="close()" class="ant-btn">
+            <span>取消</span>
+          </button>
+
+        </div>
+      </nz-drawer>
+    </div>
+  </div>
+  <!-- 查询条件后处理按钮组 -->
+  <div style="margin:10px">
+    <div nz-row class="condition_row" style="margin-top:5px" nzGutter="16">
+      <div style="margin-right:20px" nz-col nzSpan="1" nzOffset="1">
+        <button nz-button nzType="primary" (click)="query()">查询</button>
+      </div>
+      <div style="margin-right:20px;color:#999999" nz-col nzSpan="1">
+        <button nz-button nzType="default" (click)="saveAsTemplate()">另存为</button>
+      </div>
+      <nz-modal [(nzVisible)]="showSaveTemplate" nzTitle="保存模板" (nzOnCancel)="cancelSaveAsTemplate()" (nzOnOk)="confirmSaveAsTemplate()">
+        <div nz-row class="condition_row" nzGutter="8">
+          <div nz-col nzSpan="4" class="condition_col_one"> 模板名</div>
+          <div nz-col nzSpan="20">
+            <div>
+              <input nz-input [(ngModel)]="saveTemplateName">
+            </div>
+          </div>
+        </div>
+      </nz-modal>
+      <div style="color:#999999" nz-col nzSpan="1">
+        <button nz-button nzType="default" (click)="reset()">重置</button>
+      </div>
+    </div>
+  </div>
+  <!-- 表格div -->
+  <div class="data_table" style="border-top:15px #e0e0e0 solid;">
+    <!-- 表头标示行 -->
+    <div nz-row nzGutter="8" style="margin-top:15px;margin-bottom:15px">
+      <div nz-col nzSpan="4">
+        <div class="alarm_icon">
+          <i class="fhfont fh-zhudaohanggaojingjinji" style="color:#F46E84;margin-left:10px;"></i>
+          <i class="icon fhfont fh-zhudaohanggaojingchengse" style="color:#F49A6E;margin-left:10px;"></i>
+          <i class="icon fhfont fh-zhudaohanggaojinghuangse" style="color:#F4CD6E;margin-left:10px;"></i>
+          <i class="icon fhfont fh-zhudaohanggaojinglanse" style="color:#6EA7F4;margin-left:10px;"></i>
+        </div>
+      </div>
+      <div nz-col nzSpan="4" nzOffset="16">
+        <div class="alarm_action" style="color:#4290f7;float:right">
+          <span (click)="clickFilter()" nzPlacement="bottom" nz-tooltip nzTitle="过滤行数据">
+            <i class="icon fhfont fh-guolv" style="margin-left:10px"></i>
+          </span>
+          <span (click)="clickColSelect()" nzPlacement="bottom" nz-tooltip nzTitle="定制列">
+            <i class="icon fhfont fh-lieshezhi" style="margin-left:10px"></i>
+          </span>
+          <span nzPlacement="bottom" nz-tooltip nzTitle="导出">
+            <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
+              <a nz-dropdown>
+                <i class="icon fhfont fh-daochu" style="margin-left:10px"></i>
+              </a>
+              <ul nz-menu nzSelectable>
+                <li nz-menu-item>
+                  <a (click)="export('html')">html</a>
+                </li>
+                <li nz-menu-item>
+                  <a (click)="export('excel')">excel</a>
+                </li>
+              </ul>
+            </nz-dropdown>
+          </span>
+
+        </div>
+      </div>
+    </div>
+    <!-- 表格内容div -->
+    <div class="data_content">
+      <kendo-grid [loading]="table_loading" style="display:grid;width:100%" [data]="alarmDataView" [sortable]="{
+        allowUnsort: allowUnsort,
+        mode: multiple ? 'multiple' : 'single'
+        }" [sort]="sort" (sortChange)="sortChange($event)" [filter]="state.filter" (dataStateChange)="dataStateChange2filter($event)"
+        [filterable]="showFilter" [pageSize]="pageSize" [skip]="skip" [pageable]="{
+          buttonCount: buttonCount,
+          info: info,
+          type: type,
+          pageSizes: pageSizes,
+          previousNext: previousNext
+        }" [height]="500" (pageChange)="pageChange($event)">
+        <!-- 每条告警的告警详情模板 -->
+        <ng-template kendoGridDetailTemplate let-dataItem>
+          <table>
+            <tr>
+              <td class="td_alarm_detail">名称：{{dataItem.typeName}}</td>
+              <td class="td_alarm_detail">管理ip：{{dataItem.manageIp}}</td>
+              <td class="td_alarm_detail" rowspan="2">产生原因：{{dataItem.almReason}}</td>
+            </tr>
+            <tr>
+              <td class="td_alarm_detail">告警源：{{dataItem.objectName}}</td>
+              <td class="td_alarm_detail">备注：{{dataItem.remark}}</td>
+            </tr>
+            <tr>
+              <td class="td_alarm_detail">网元类型：{{dataItem.neType}}</td>
+              <td class="td_alarm_detail">附加信息：{{dataItem.appendInfo}}</td>
+              <td class="td_alarm_detail" rowspan="2">处理建议：{{dataItem.almReason}}</td>
+            </tr>
+            <tr>
+              <td class="td_alarm_detail">定位信息：{{dataItem.extendedInfo}}</td>
+              <td class="td_alarm_detail">网元备注：{{dataItem.neRemark}}</td>
+            </tr>
+            <tr>
+              <td class="td_alarm_detail">IP：{{dataItem.manageIp}}</td>
+              <td class="td_alarm_detail">描述：{{dataItem.keyInfo}}</td>
+              <td class="td_alarm_detail">维护经验：{{dataItem.ip}}</td>
+            </tr>
+          </table>
+          <div nz-row class="condition_row" nzGutter="8" style="margin-top:40px">
+            <div nz-col nzSpan="6" nzOffset="2" style="float:left">
+              <div nz-col style="float:left">
+                <button nz-button nzType="default" (click)="viewAlarmDetail(dataItem)">查看详情</button>
+              </div>
+              <div nz-col style="float:left">
+                <button nz-button nzType="default" (click)="investigation(dataItem)">立即排查</button>
+              </div>
+
+            </div>
+          </div>
+        </ng-template>
+        <!-- 告警图标列 -->
+        <kendo-grid-column [headerStyle]="{'color': '#333333','font-size':'12px'}" [width]="150" field="" title="图标">
+        </kendo-grid-column>
+        <!-- 其他列 -->
+        <kendo-grid-column [headerStyle]="{'color': '#333333','font-size':'12px'}" [width]="150" [minResizableWidth]="80" [hidden]="colData.hiddenStatus"
+          *ngFor="let colData of colDataArray" field="{{colData.field}}" title="{{colData.title}}">
+          <!-- 告警名列模板 -->
+          <ng-template *ngIf="colData.title=='告警名'" let-filter kendoGridCellTemplate let-dataItem>
+            <div (click)="viewAlarmDetail(dataItem)" style="color:#4290f7;">
+              {{dataItem.typeName}}
+            </div>
+          </ng-template>
+
+          <!-- 告警级别列模板 -->
+          <ng-template *ngIf="colData.title=='级别'" let-filter kendoGridCellTemplate let-dataItem>
+            <div>
+              <i *ngIf="dataItem.levelName=='紧急'" class="fhfont fh-zhudaohanggaojingjinji" style="color:#F46E84;margin-left:10px;"></i>
+              <i *ngIf="dataItem.levelName=='主要'" class="icon fhfont fh-zhudaohanggaojingchengse" style="color:#F49A6E;margin-left:10px;"></i>
+              <i *ngIf="dataItem.levelName=='次要'" class="icon fhfont fh-zhudaohanggaojinghuangse" style="color:#F4CD6E;margin-left:10px;"></i>
+              <i *ngIf="dataItem.levelName=='提示'" class="icon fhfont fh-zhudaohanggaojinglanse" style="color:#6EA7F4;margin-left:10px;"></i>
+              {{dataItem.levelName}}
+            </div>
+          </ng-template>
+        </kendo-grid-column>
+
+
+      </kendo-grid>
+      <!-- 列设置弹框 -->
+      <nz-modal [nzBodyStyle]="{  'height': '400px'}" [(nzVisible)]="showColSelect" [nzClosable]="false" nzTitle="列设置" [nzFooter]=null>
+        <nz-transfer [nzDataSource]="colDataArray2modify" [nzTitles]="['显示列', '隐藏列']" nzShowSearch (nzChange)="colSelectChange($event)">
+        </nz-transfer>
+
+        <div nz-row class="condition_row" nzGutter="8" style="margin-top:40px">
+          <div nz-col nzSpan="9" nzOffset="6" style="float:left">
+            <div nz-col style="float:left">
+              <button nz-button nzType="default" (click)="confirmColSelect()">确定</button>
+            </div>
+            <div nz-col style="float:left">
+              <button nz-button nzType="default" (click)="cancelColSelect()">取消</button>
+            </div>
+
+          </div>
+        </div>
+
+      </nz-modal>
+
+
+    </div>
+  </div>

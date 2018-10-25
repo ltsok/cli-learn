@@ -1,0 +1,95 @@
+{
+    "result": {
+        "code": "10000",
+        "type": "server",
+        "desc": "ok"
+    },
+    "content": {
+        "operType": "READ",
+        "oid": null,
+        "operationId": 0,
+        "userId": 1,
+        "templateId": 3,
+        "templateTypeId": 1,
+        "templateName": "new2",
+        "creator": "admin",
+        "createTime": 1536792403000,
+        "remark": "test2",
+        "almQueryCondition": {
+            "operType": "READ",
+            "oid": null,
+            "operationId": 0,
+            "strAlmTypes": "1588",
+            "strLevels": "0,1,2,3",
+            "strStatues": "0,1,2,3",
+            "strKinds": "0,1,2,3,4,5",
+            "confirmTimeRange": {
+                "startDate": null,
+                "endDate": null
+            },
+            "createTimeFromNowInMinutes": 0,
+            "createTimeRange": {
+                "startDate": null,
+                "endDate": null
+            },
+            "clearTimeRange": {
+                "startDate": null,
+                "endDate": null
+            },
+            "duration": 0,
+            "durationOperator": 0,
+            "remark": "",
+            "showDerivedAlm": false,
+            "strConfirmUsers": "admin",
+            "strClearUsers": "admin",
+            "strClients": "",
+            "lineNumbers": "",
+            "delayTime": null,
+            "ectRoadCodes": "",
+            "logCountBean": null,
+            "almSourceBean": {
+                "allSelect": false,
+                "sourceType": 1,
+                "objBeans": [
+                    {
+                        "type": "NE",
+                        "name": null,
+                        "objId": {
+                            "neId": 13172737,
+                            "boardId": 0,
+                            "strPortKey": null,
+                            "onuId": 0
+                        },
+                        "typeId": 0,
+                        "objTypeInNe": null
+                    },
+                    {
+                        "type": "NE",
+                        "name": null,
+                        "objId": {
+                            "neId": 13172736,
+                            "boardId": 0,
+                            "strPortKey": null,
+                            "onuId": 0
+                        },
+                        "typeId": 0,
+                        "objTypeInNe": null
+                    }
+                ],
+                "singleObject": null
+            },
+            "strClearType": "0,1,2,3,4",
+            "strShockTypeString": "1,0",
+            "strProjectStatusString": "0",
+            "almReverseCondMask": 0,
+            "strAlmIds": null
+        },
+        "domainType": 1,
+        "version": 1,
+        "isDefaultTemplate": 0,
+        "isCurAlarmMonitorTemplate": 1,
+        "isDefaultCurAlarmMonitorTemplate": 0,
+        "isStartUpTemplate": 0,
+        "shared": false
+    }
+}

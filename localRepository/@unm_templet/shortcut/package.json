@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@unm_templet/shortcut@1.0.0",
+        "scope": "@unm_templet",
+        "escapedName": "@unm_templet%2fshortcut",
+        "name": "@unm_templet/shortcut",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@unm_templet/shortcut@1.0.0",
+  "_id": "@unm_templet/shortcut@1.0.0",
+  "_inCache": true,
+  "_location": "/@unm_templet/shortcut",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@unm_templet/shortcut@1.0.0",
+    "scope": "@unm_templet",
+    "escapedName": "@unm_templet%2fshortcut",
+    "name": "@unm_templet/shortcut",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@unm_templet%2fshortcut/-/shortcut-1.0.0.tgz",
+  "_shasum": "94ee7888bf773ed59a6c839dfb5a93bccd3665c8",
+  "_shrinkwrap": null,
+  "_spec": "@unm_templet/shortcut@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "@waf_service/context": "1.0.0"
+  },
+  "description": "shortcut模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "94ee7888bf773ed59a6c839dfb5a93bccd3665c8",
+    "tarball": "http://10.170.190.45:4873/@unm_templet%2fshortcut/-/shortcut-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@unm_templet/shortcut",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

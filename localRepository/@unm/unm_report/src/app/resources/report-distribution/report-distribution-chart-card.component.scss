@@ -1,0 +1,45 @@
+.detailHeader {
+  border-bottom: #cecece 1px solid;
+  padding: 16px;
+  margin-bottom: 20px; // font-weight: bold;
+  color: #333333;
+}
+
+.detailHeader1 {
+  border-top: #cecece 1px solid;
+  padding: 0;
+  margin-bottom: 20px; // font-weight: bold;
+  color: #333333;
+}
+
+.toolBox {
+  display: inline-block;
+  margin: 0 8px; // font-size: 18px;
+}
+
+.activedTool {
+  color: #999999;
+}
+
+.innerHeader {
+  color: #999999;
+}
+
+.topNLabel {
+  font-size: 12px;
+  transform: scale(0.8);
+  -ms-transform: scale(0.8); // IE 9
+  -webkit-transform: scale(0.8); // Safari and Chrome
+}
+
+.nameLabel {
+  text-align: right;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.nameLabel:hover {
+  text-overflow: inherit;
+  overflow: visible;
+}

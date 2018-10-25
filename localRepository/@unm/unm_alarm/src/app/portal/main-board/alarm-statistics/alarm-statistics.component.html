@@ -1,0 +1,40 @@
+<div>
+  <kendo-grid [data]="userTemplateArray">
+    <kendo-grid-column *ngFor="let col of cols" field="{{col.field}}" title="{{col.title}}" width="40">
+      <ng-template *ngIf="col.title=='操作'" kendoGridCellTemplate let-dataItem>
+        <div style="color:#4290f7;float:left;margin-left:10px">
+          <span (click)="setTemplate2default(dataItem)" *ngIf="dataItem.isDefaultCurAlarmMonitorTemplate == '0'" nzPlacement="bottom"
+            nz-tooltip nzTitle="设为默认">
+            <i class="icon fhfont fh-yitiaozheng"></i>
+          </span>
+          <span style='color:#999999' *ngIf="dataItem.isDefaultCurAlarmMonitorTemplate == '1'" nzPlacement="bottom" nz-tooltip nzTitle="默认模板">
+            <i class="icon fhfont fh-yitiaozheng"></i>
+          </span>
+        </div>
+        <div style="color:#4290f7;float:left;margin-left:10px">
+          <span (click)="deleteUserStatisticTemplate(dataItem)" nzPlacement="bottom" nz-tooltip nzTitle="删除">
+            <i class="icon fhfont fh-shanchu"></i>
+          </span>
+        </div>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+  <div style="margin-top:20px">
+    <div style="float:left;margin-left:10px">
+      <label nz-checkbox [(ngModel)]="alarmLightStaus" (ngModelChange)="changeAlarmLight($event)">闪烁告警灯</label>
+    </div>
+    <div style="margin-right:10px;text-align:right">
+      <nz-dropdown>
+        <button nz-button nz-dropdown>
+          <span>添加</span>
+          <i class="anticon anticon-down"></i>
+        </button>
+        <ul nz-menu>
+          <li *ngFor="let option of selectTemplateOptions" (click)="addUserStatisticTemplate(option)" nz-menu-item>
+            <a>{{option.templateName}}</a>
+          </li>
+        </ul>
+      </nz-dropdown>
+    </div>
+  </div>
+</div>

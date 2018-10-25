@@ -1,0 +1,30 @@
+{
+    "select": "tutorial",
+    "products": [
+      {
+        "name": "tutorial",
+        "localCode": "D:/waf/src/waf_tutorial",
+        "localRep": "D:/rep",
+        "dist": "D:/dist",
+        "version": "1.0.0",
+        "customization": {
+          "templet": "classic_templet",
+          "defaultTheme": "darkness",
+          "defaultLang": "zh",
+          "defaultFuncs":["portal"]
+        }
+      },
+      {
+        "name": "unm",
+        "localCode": "D:/web/Src/client/unm2000web",
+        "localRep": "D:/rep",
+        "dist": "D:/dist",
+        "version": "1.0.0",
+        "customization": {
+          "templet": "unm_templet",
+          "defaultTheme": "darkness",
+          "defaultLang": "zh"
+        }
+      }
+    ]
+  }

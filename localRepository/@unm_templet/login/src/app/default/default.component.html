@@ -1,0 +1,70 @@
+<!-- 登录背景区域 -->
+<div class="login-background">
+
+  <!-- 登录header区域 -->
+  <div class="login-header">
+
+    <!-- 系统logo -->
+    <img src="assets/logo.png" alt='{{"app.logo" | translate}}'>
+
+    <!-- 系统title -->
+    <h1>{{"app.title" | translate}}</h1>
+
+    <!-- 语言类型 -->
+    <div (click)="switchLang()" class="lang">
+      <i class="waffont waf-earth"></i>{{selectedLang}}
+    </div>
+
+  </div>
+
+  <!-- 登录footer区域 -->
+  <div class="login-footer">
+    <div>{{"app.copyright" | translate}}</div>
+  </div>
+
+  <!-- 背景效果 -->
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+
+</div>
+
+<!-- 登录内容 -->
+<div class="login-content">
+
+  <!-- 登录图 -->
+  <img src="assets/login-content.png" alt='{{"app.login.content" | translate}}'>
+
+  <!-- 登录输入区域 -->
+  <div class="login-input-area">
+
+    <div class="login-input">
+
+      <!-- 登录title -->
+      <div class="title">{{"login.title" | translate}}</div>
+
+      <!-- 用户名输入 -->
+      <div class="input">
+        <input nz-input type="text" placeholder='{{"login.user.name" | translate}}' [(ngModel)]="name">
+      </div>
+
+      <!-- 密码输入 -->
+      <div class="input">
+        <input nz-input type="password" autocomplete="new-password" placeholder='{{"login.user.pwd" | translate}}' [(ngModel)]="password">
+      </div>
+
+      <!-- 服务器输入 -->
+      <div class="input">
+        <nz-select [(ngModel)]="selectedServer" nzPlaceHolder='{{"login.server.name" | translate}}' [nzSize]='"large"'>
+          <nz-option *ngFor="let server of servers" [nzLabel]="server.label" [nzValue]="server"></nz-option>
+        </nz-select>
+      </div>
+
+      <!-- 登录提交 -->
+      <div class="input submit">
+        <button nz-button nzType="primary" [disabled]="!name || !password || !selectedServer" (click)="onLogin()">{{"login" | translate}}</button>
+      </div>
+
+    </div>
+  </div>
+</div>

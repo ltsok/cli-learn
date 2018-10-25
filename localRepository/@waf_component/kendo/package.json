@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_component/kendo@1.0.0",
+        "scope": "@waf_component",
+        "escapedName": "@waf_component%2fkendo",
+        "name": "@waf_component/kendo",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_component/kendo@1.0.0",
+  "_id": "@waf_component/kendo@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_component/kendo",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_component/kendo@1.0.0",
+    "scope": "@waf_component",
+    "escapedName": "@waf_component%2fkendo",
+    "name": "@waf_component/kendo",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_component%2fkendo/-/kendo-1.0.0.tgz",
+  "_shasum": "ebccee8b97233d06fcc71cefd2b39b2893a11b6a",
+  "_shrinkwrap": null,
+  "_spec": "@waf_component/kendo@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "@progress/kendo-theme-default": "^2.49.0"
+  },
+  "description": "kendo控件库引入模块",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "ebccee8b97233d06fcc71cefd2b39b2893a11b6a",
+    "tarball": "http://10.170.190.45:4873/@waf_component%2fkendo/-/kendo-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_component/kendo",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

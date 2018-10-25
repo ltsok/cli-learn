@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<path fill="#C6C6C6" d="M30.84,1H1.16C1.072,1,1,1.072,1,1.16v29.389c0,0.088,0.071,0.16,0.16,0.16h29.681
+		c0.088,0,0.159-0.071,0.159-0.159V1.16C31,1.072,30.929,1,30.84,1L30.84,1z"/>
+	<polyline fill="#F5F5F5" points="30,2 30,29.958 2,29.958 2,2 30,2 	"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="2.9584" y1="15.9583" x2="28.9584" y2="15.9583">
+		<stop  offset="0" style="stop-color:#F1E821"/>
+		<stop  offset="1" style="stop-color:#D6B900"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M28.503,28.854H3.414c-0.252,0-0.456-0.204-0.456-0.456V3.518c0-0.252,0.204-0.456,0.456-0.456
+		h25.088c0.252,0,0.456,0.204,0.456,0.456v24.88C28.958,28.65,28.754,28.854,28.503,28.854z"/>
+	<rect x="5" y="7.979" fill="#F5F5F5" width="22" height="20"/>
+	<polygon fill="#A18700" points="27,7.979 5,7.979 5,27.979 27,27.979 27,7.979 	"/>
+	<polyline fill="#FFFFFF" points="26,8.979 26,26.979 6,26.979 6,8.979 26,8.979 	"/>
+	<rect x="9.104" y="10.979" fill="#CEB41A" width="1.917" height="9.917"/>
+	<rect x="12.021" y="10.979" fill="#CEB41A" width="1.917" height="9.917"/>
+	<rect x="15.021" y="10.979" fill="#CEB41A" width="1.917" height="9.917"/>
+	<rect x="18.021" y="10.979" fill="#CEB41A" width="1.917" height="9.917"/>
+	<rect x="21.021" y="10.979" fill="#CEB41A" width="1.917" height="9.917"/>
+	<rect x="7.021" y="23.948" fill="#CEB41A" width="2.917" height="1.969"/>
+	<rect x="22.021" y="23.948" fill="#CEB41A" width="2.917" height="1.969"/>
+	<rect x="11.958" y="23.948" fill="#CEB41A" width="8.042" height="1.969"/>
+	<polygon fill="#F5F5F5" points="25.094,7.385 7.469,7.385 9.644,5.823 23.476,5.823 	"/>
+	<polygon fill="#A38900" points="23.794,5.036 23.476,5.036 9.644,5.036 9.391,5.036 9.185,5.184 7.01,6.746 5.024,8.173 
+		7.469,8.173 25.094,8.173 27.042,8.173 25.641,6.819 24.023,5.257 23.794,5.036 	"/>
+	<polyline fill="#FFFFFF" points="23.476,5.823 25.479,7.896 6.854,7.896 9.644,5.823 23.476,5.823 	"/>
+</g>
+</svg>

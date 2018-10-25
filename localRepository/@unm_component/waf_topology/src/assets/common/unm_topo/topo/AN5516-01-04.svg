@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<path fill="#C6C6C6" d="M30.84,1.625H1.16C1.072,1.625,1,1.697,1,1.785v29.389c0,0.088,0.071,0.16,0.16,0.16h29.681
+		c0.088,0,0.159-0.071,0.159-0.159V1.785C31,1.697,30.929,1.625,30.84,1.625L30.84,1.625z"/>
+	<polyline fill="#FFFFFF" points="30,2.438 30,30.521 2,30.521 2,2.438 30,2.438 	"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="16.0001" y1="29.3751" x2="16.0001" y2="3.5834">
+		<stop  offset="0" style="stop-color:#FBEA99"/>
+		<stop  offset="0.9677" style="stop-color:#CEAA00"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M28.544,29.375H3.456C3.204,29.375,3,29.171,3,28.919V4.039c0-0.252,0.204-0.456,0.456-0.456h25.088
+		C28.796,3.583,29,3.787,29,4.039v24.88C29,29.171,28.796,29.375,28.544,29.375z"/>
+</g>
+<g>
+	<path fill="#A78A00" d="M6.563,6.583v18.958h19.021V6.583H6.563z M7.542,7.563h2v0.958h-2V7.563z M10.542,24.521h-2V10.563h2
+		V24.521z M10.542,7.563h2v0.958h-2V7.563z M14.542,24.521h-2V10.563h2V24.521z M15.542,8.521h-2V7.563h2V8.521z M18.5,24.521h-2
+		V10.563h2V24.521z M18.542,8.521h-2V7.563h2V8.521z M19.542,7.563h2v0.958h-2V7.563z M22.5,24.521h-2V10.563h2V24.521z
+		 M24.542,8.521h-2V7.563h2V8.521z"/>
+	<path fill="#FFFFFF" d="M5.688,7.417v18.958h19.021V7.417H5.688z M6.667,8.396h2v0.958h-2V8.396z M9.667,25.354h-2V11.396h2V25.354
+		z M9.667,8.396h2v0.958h-2V8.396z M13.667,25.354h-2V11.396h2V25.354z M14.667,9.354h-2V8.396h2V9.354z M17.625,25.354h-2V11.396h2
+		V25.354z M17.667,9.354h-2V8.396h2V9.354z M18.667,8.396h2v0.958h-2V8.396z M21.625,25.354h-2V11.396h2V25.354z M23.667,9.354h-2
+		V8.396h2V9.354z"/>
+</g>
+</svg>

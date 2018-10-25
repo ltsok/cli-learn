@@ -1,0 +1,79 @@
+<div style="border-bottom:15px #e0e0e0 solid;">
+    <div nz-row style=" margin-top:15px" nzGutter="8">{{alarmData.name}}</div>
+    <div nz-row style=" margin-top:15px" nzGutter="8">
+        <div nz-col nzSpan="12" class="condition_col_one ">
+            <img src="assets/detail.PNG ">
+        </div>
+        <div nz-col nzSpan="12">
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">告警源：</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">定位信息:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">影响业务:</div>
+                <div nz-col nzSpan="12">频次:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">首次发生时间:</div>
+                <div nz-col nzSpan="12">最近发生时间:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">告警类型:</div>
+                <div nz-col nzSpan="12">网元IP:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">网元类型:</div>
+                <div nz-col nzSpan="12">管理IP:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">备注:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">附加信息:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <div nz-col nzSpan="12">处理状态:</div>
+            </div>
+            <div nz-row style="margin-top:15px" nzGutter="8">
+                <button nz-button nzType="primary" (click)="investigation()">立即排查</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    关联告警
+</div>
+<div style="width:50%">
+    <nz-table #nzTable [nzData]="dataSet" [nzPageSize]="10" [nzScroll]="{x:'1500px'}">
+        <thead>
+            <tr>
+
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+                <th>Column 6</th>
+                <th>Column 7</th>
+                <th>Column 8</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of nzTable.data">
+
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.address}}</td>
+
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

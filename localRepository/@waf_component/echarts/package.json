@@ -1,0 +1,63 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_component/echarts@1.0.0",
+        "scope": "@waf_component",
+        "escapedName": "@waf_component%2fecharts",
+        "name": "@waf_component/echarts",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_component/echarts@1.0.0",
+  "_id": "@waf_component/echarts@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_component/echarts",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_component/echarts@1.0.0",
+    "scope": "@waf_component",
+    "escapedName": "@waf_component%2fecharts",
+    "name": "@waf_component/echarts",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@tutorial/tutorial_component"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_component%2fecharts/-/echarts-1.0.0.tgz",
+  "_shasum": "5f77d2fcef5be5de9142ac049f285c394c459a0f",
+  "_shrinkwrap": null,
+  "_spec": "@waf_component/echarts@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "echarts": "4.0.4"
+  },
+  "description": "echarts模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "5f77d2fcef5be5de9142ac049f285c394c459a0f",
+    "tarball": "http://10.170.190.45:4873/@waf_component%2fecharts/-/echarts-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_component/echarts",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

@@ -1,0 +1,124 @@
+/*STYLE RESET*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "microsoft yahei", Arial;
+  font-weight: normal;
+  font-size: 14px;
+  color: #333333;
+}
+a{
+  text-decoration: none;
+}
+ul,ol,li {
+  list-style: none;
+}
+.clearfix:after{content: ".";clear: both;display: block;height: 0;visibility: hidden;}
+/*STYLE RESET*/
+
+.topology {
+  border: 1px solid rgba(224, 224, 224, 1);
+  border-left-width: 0px;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+
+.toolbar {
+  width: 100%;
+  height: 28px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 18px;
+  text-align: center;
+  z-index: 1;
+  /*border: 1px solid red;*/
+}
+
+.icon_lists {
+  float: left;
+}
+
+.icon_lists li {
+  float: left;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  /*text-align: center;*/
+  list-style: none !important;
+  border: 1px solid rgba(228, 228, 228, 1);
+  border-right-width: 0px;
+}
+
+.icon_lists li:last-child {
+  border-right-width: 1px;
+  border-right-color: rgba(228, 228, 228, 1);
+}
+
+.icon_lists li:hover {
+  border: 1px solid #188FFD;
+  background-color: #dae8fc;
+  cursor: hand;
+}
+
+.icon_lists .icon {
+  font-size: 16px;
+  color: rgb(88, 140, 237);
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
+}
+
+.alarm {
+  float: left;
+  margin-left: 20px;
+  height: 28px;
+}
+
+.alarm .col {
+  float: left;
+  margin-left: 10px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.alarm .col .icon0 {
+  width: 10px;
+  height: 10px;
+  background-color: #f32727;
+  display: inline-block;
+}
+
+.alarm .col .icon1 {
+  width: 10px;
+  height: 10px;
+  background-color: #fa7821;
+  display: inline-block;
+}
+
+.alarm .col .icon2 {
+  width: 10px;
+  height: 10px;
+  background-color: #ffcc00;
+  display: inline-block;
+}
+
+.alarm .col .icon3 {
+  width: 10px;
+  height: 10px;
+  background-color: #1890ff;
+  display: inline-block;
+}
+
+.alarm .col .label {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.path {
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  position: absolute;
+  right: 30px;
+  /*border:1px solid red;*/
+}

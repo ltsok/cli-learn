@@ -1,0 +1,41 @@
+{
+  "svn": "",
+  "localCode": "D:/waf/src/waf",
+  "localRep": "D:/rep",
+  "templet": {
+    "dir": "/waf_templet",
+    "templets":[
+      ["classic_templet", ["global","menu","submenu","shortcut","login"]],
+      ["unm_templet", ["global","menu","submenu","shortcut","login"]]
+    ],
+    "version": "1.0.0"
+  },
+  "service": {
+    "dir": "/waf_service",
+    "names": ["logger","i18n","tpi","cache","event","context","http","push","storage","theme","router"],
+    "version": "1.0.0"
+  },
+  "component": {
+    "dir": "/waf_component",
+    "lib":{
+      "dir": "/lib",
+      "names": ["kendo","zorro","echarts","animate"],
+      "version": "1.0.0"
+    },
+    "widget":{
+      "dir": "/widget",
+      "names": ["waf_dragdrop","waf_layout","waf_tag","waf_dropdown"],
+      "version": "1.0.0"
+    }
+  },
+  "func": {
+    "dir": "/waf_func",
+    "names": ["portal"],
+    "version": "1.0.0"
+  },
+  "resource": {
+    "dir": "/waf_resource",
+    "names": ["i18n","theme","iconfont"],
+    "version": "1.0.0"
+  }
+}

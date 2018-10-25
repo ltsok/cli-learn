@@ -1,0 +1,86 @@
+<div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+  <div nz-col nzSpan="18">
+    <!-- {{typeLabel}}{{"unm.report.grid.table" | translate}} -->
+    <span>({{"unm.report.grid.updateTime" | translate}}：{{updateTime|date:'yyyy.MM.dd HH:mm:ss'}})</span>
+
+  </div>
+  <div nz-col nzSpan="6" style="text-align: right;">
+    <a class="gridTool" [ngClass]="{'activedTool': isfilterable}" title="{{'unm.report.grid.filter' | translate}}"
+      (click)="isfilterable=!isfilterable">
+      <i class="fhfont fh-guolv"></i>
+    </a>
+    <a class="gridTool" [ngClass]="{'activedTool': isColsConfigVisible}" (click)="showColTransfer()">
+      <i class="fhfont fh-lieshezhi"></i>
+    </a>
+    <a class="gridTool" [ngClass]="{'activedTool': isExportVisible}" title="{{'unm.report.grid.export' | translate}}"
+      nz-popover [(nzVisible)]="isExportVisible" nzTrigger="click" [nzContent]="exportTemplate" nzPlacement="bottomRight">
+      <i [ngClass]="{'fhfont fh-daochu': !isExporting,'anticon anticon-spin anticon-loading': isExporting,'processing': isExporting}"></i>
+    </a>
+    <ng-template #exportTemplate>
+      <ul class="colSetList">
+        <li>
+          <a (click)="doExport('html')"> html </a>
+        </li>
+        <li>
+          <a (click)="doExport('excel')"> excel </a>
+        </li>
+      </ul>
+    </ng-template>
+    <ng-template #colsConfigTemplate>
+      <nz-checkbox-wrapper (nzOnChange)="colSetChange($event)">
+        <ul class="colSetList">
+          <li *ngFor="let col of allCols;let index = index">
+            <label nz-checkbox [nzValue]="col.name" [(ngModel)]="!col.hidden">{{col.name}}</label>
+          </li>
+        </ul>
+      </nz-checkbox-wrapper>
+    </ng-template>
+    <nz-modal [(nzVisible)]="isColsConfigVisible" [nzClosable]="false" nzTitle="{{'unm.report.grid.colConfigs' | translate}}"
+      (nzOnOk)="transferOK()" (nzOnCancel)="transferCancel()">
+      <nz-transfer [nzDataSource]="transferList" [nzTitles]="['', '']" (nzChange)="transferChange($event)">
+      </nz-transfer>
+    </nz-modal>
+  </div>
+</div>
+
+<div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+  <kendo-grid #kgrid [data]="gridView" [loading]="isGridLoading" [height]="460" [rowHeight]="35" [resizable]="true"
+    style="display:grid;width:100%" [sortable]="{allowUnsort: allowUnsort, mode: multiple ? 'multiple' : 'single' }"
+    [pageSize]="take" [skip]="skip" [sort]="sort" [filter]="filter" [scrollable]="'virtual'" [filterable]="isfilterable"
+    (sortChange)="sortChange($event)" (filterChange)="filterChange($event)" (pageChange)="innerPageChange($event)"
+    (cellClick)="cellClick($event)" [selectable]="selectableSettings" [kendoGridSelectBy]="selectBy" [selectedKeys]="mySelection"
+    (selectedKeysChange)="onSelectedKeysChange($event)">
+    <kendo-grid-checkbox-column [hidden]="!selectable" [width]="50">
+      <ng-template kendoGridHeaderTemplate>
+        <input class="k-checkbox" id="selectAllCheckboxId" kendoGridSelectAllCheckbox [state]="selectAllState"
+          (selectAllChange)="onSelectAllChange($event)">
+        <label class="k-checkbox-label" for="selectAllCheckboxId"></label>
+      </ng-template>
+    </kendo-grid-checkbox-column>
+    <ng-container *ngFor="let col of allCols;let index = index">
+      <kendo-grid-column field="{{index}}" [hidden]="col.hidden" [width]="col.width" [minResizableWidth]="60">
+        <ng-template kendoGridHeaderTemplate let-column>
+          {{col.name}}
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <div class="whole-cell" [title]="dataItem[index]">
+            {{dataItem[index]}}
+          </div>
+        </ng-template>
+      </kendo-grid-column>
+    </ng-container>
+    <!-- <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+            <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+            <kendo-pager-numeric-buttons [buttonCount]="5"></kendo-pager-numeric-buttons>
+            <kendo-pager-info></kendo-pager-info>
+            <kendo-pager-next-buttons></kendo-pager-next-buttons>
+            <kendo-pager-page-sizes [pageSizes]="[5, 10, 40]"></kendo-pager-page-sizes>
+          </ng-template> -->
+  </kendo-grid>
+</div>
+<nz-pagination [(nzPageIndex)]="pageIndex" [nzTotal]="total" [(nzPageSize)]="pageSize" [nzShowTotal]="rangeTemplate"
+  nzShowSizeChanger [nzPageSizeOptions]="pageSizeOptions" (nzPageIndexChange)="onPagerChange($event)"
+  (nzPageSizeChange)="onPagerChange($event)"></nz-pagination>
+<ng-template #rangeTemplate let-range="range" let-total>
+  {{range[0]>range[1]?range[1]:range[0]}}-{{range[1]>total?total:range[1]}} / {{total}}
+</ng-template>

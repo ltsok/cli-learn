@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<g>
+		<rect x="1.457" y="20.667" fill="#8F8F8F" width="29.086" height="9.333"/>
+	</g>
+	<polygon fill="#FFFFFF" points="29.241,21.969 2.542,21.969 2.542,28.698 29.241,28.698 29.241,21.969 	"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="15.8915" y1="28.6977" x2="15.8915" y2="23.2712">
+		<stop  offset="0" style="stop-color:#9A9A9B"/>
+		<stop  offset="0.1736" style="stop-color:#ABABAC"/>
+		<stop  offset="0.4864" style="stop-color:#C4C4C5"/>
+		<stop  offset="0.771" style="stop-color:#D4D4D4"/>
+		<stop  offset="1" style="stop-color:#D9D9D9"/>
+	</linearGradient>
+	<polyline fill="url(#SVGID_1_)" points="27.938,23.271 27.938,28.698 3.845,28.698 3.845,23.271 27.938,23.271 	"/>
+	<rect x="15.871" y="14.914" fill="#FFFFFF" width="2.103" height="5.752"/>
+	<g>
+		<g>
+			<rect x="15.023" y="14.914" fill="#8F8F8F" width="0.868" height="5.752"/>
+			<rect x="17.954" y="14.914" fill="#8F8F8F" width="0.868" height="5.752"/>
+		</g>
+		<rect x="15.871" y="15.783" fill="#ACACAC" width="2.103" height="4.884"/>
+	</g>
+	<rect x="15.946" y="12.744" fill="#8F8F8F" width="1.954" height="2.062"/>
+	<g>
+		<path fill="none" stroke="#8F8F8F" stroke-width="1.3023" stroke-miterlimit="10" d="M22.044,14.252
+			c-0.714-2.571-2.723-4.438-5.118-4.438c-2.403,0-4.417,1.88-5.125,4.464"/>
+		<path fill="none" stroke="#8F8F8F" stroke-width="1.3023" stroke-miterlimit="10" d="M25.708,13.6
+			c-1.045-4.416-4.568-7.693-8.782-7.693c-4.223,0-7.751,3.289-8.789,7.718"/>
+		<path fill="none" stroke="#8F8F8F" stroke-width="1.3023" stroke-miterlimit="10" d="M29.4,12.943C28.045,6.677,22.973,2,16.925,2
+			C10.869,2,5.792,6.689,4.445,12.968"/>
+	</g>
+</g>
+</svg>

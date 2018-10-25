@@ -1,0 +1,45 @@
+<div class="objtree">
+  <div class="keyword">
+    <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomCenter'" [nzClickHide]="false" style="position: absolute">
+      <a nz-dropdown>
+        <i class="anticon anticon-search"></i>
+        <i class="la-down"></i>
+      </a>
+      <ul nz-menu style="top: 20px;">
+        <li nz-menu-item><label nz-checkbox [(ngModel)]="searchObject.name">名称</label></li>
+        <li nz-menu-item><label nz-checkbox [(ngModel)]="searchObject.ip">IP</label></li>
+        <li nz-menu-item><label nz-checkbox [(ngModel)]="searchObject.type">网元类型</label></li>
+      </ul>
+    </nz-dropdown>
+    <input #inp nzSize="small" style="padding-left: 40px;width:calc(100% - 16px)" (focus)="focusInput()" [(ngModel)]="keyword"
+      (input)="selectInputChange($event.target.value)" placeholder="{{'unm.topo.tree.placeHolder.search' | translate}}"
+      nz-input [nzAutocomplete]="auto">
+    <i *ngIf="isShowClear" (click)="clearInput()" class="anticon anticon-close-circle"></i>
+    <nz-autocomplete [nzBackfill]="false" [nzDefaultActiveFirstOption]="false" #auto>
+      <nz-auto-option *ngFor="let option of filterDatas" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.id=='-1'">
+        <span (click)="selectItem(option.id)" style="display: inline-block;width: 100%">
+          <!-- <img *ngIf="option.id!=='-1'" src="{{option.url}}" style="width: 18px;height: 18px;" alt=""> -->
+          <!-- <i *ngIf="option.value!=='-1'" class="anticon anticon-dribbble"></i> -->
+          <i *ngIf="option.type==='NE'" style="font-style: normal;margin-left: 5px" nz-tooltip nzPlacement="right"
+            [nzOverlayStyle]="{'font-size':'12px'}" nzTitle="{{'unm.topo.tree.conditions.ip' | translate}}：{{option.ip}}；{{'unm.topo.tree.conditions.type' | translate}}：{{option.neTypeName}}">{{option.label}}</i>
+          <i *ngIf="option.type!=='NE'" style="font-style: normal;margin-left: 5px">{{option.label}}</i>
+          <i *ngIf="option.id==='-1'" style="font-style: normal">{{'unm.topo.tree.select.nodata'|translate}}</i>
+        </span>
+      </nz-auto-option>
+    </nz-autocomplete>
+  </div>
+  <div class="tree-area" style="margin-top: 3px;margin-left: 4px;">
+    <nz-tree [(ngModel)]="nodes" (nzClick)="nodeClick($event)">
+      <ng-template #nzTreeTemplate let-node>
+        <span class="node">
+          <!-- <i class="anticon anticon-dribbble"></i> -->
+          <!-- <img src="{{node.origin.url}}" alt="" style="width: 19px;height: 19px;vertical-align: top"> -->
+          <waf-icon way="surround" mainIcon="{{node.origin.mainIcon}}" mainIconColor="green" [icons]="node.origin.icons"
+            [style]="{'float':'left'}" [borderColor]="node.origin.borderColor" [mainIconFontSize]="12"></waf-icon>
+          <i style="font-style: normal;cursor: pointer;margin-left: 5px;float: left;font-size: 12px" [class.active]="node.isSelected">{{node.title}}</i>
+        </span>
+      </ng-template>
+    </nz-tree>
+  </div>
+</div>
+<!-- <waf-icon way="center" [isBlink]="true" mainIcon="fh-tingzhi" mainIconColor="green" [icons]="{ mainSize: 24, aroundSize: 24, aroundIcons: [{ class: 'fh-yuanshidaxiao', color: 'red' }] }"></waf-icon> -->

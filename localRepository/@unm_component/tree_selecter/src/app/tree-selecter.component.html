@@ -1,0 +1,62 @@
+<!-- 搜索框 -->
+<!-- start,center,end,space-between,space-around -->
+<ng-container *ngIf="!isCustomed">
+  <div nz-row nzType="flex" nzJustify="end" nzAlign="middle" class="myRow">
+    <div nz-col [nzSpan]="4" style="text-align:center;">
+      <div *ngIf="isShowLabel">{{searchLabel}}:</div>
+    </div>
+    <div nz-col [nzSpan]="isShowLabel?20:24">
+      <nz-input-group [nzSuffix]="suffixIcon" style="display:inline-block;">
+        <input type="text" nz-input [placeholder]="'请输入关键字'" [(ngModel)]="searchValue">
+      </nz-input-group>
+    </div>
+    <ng-template #suffixIcon>
+      <i class="anticon anticon-search"></i>
+    </ng-template>
+  </div>
+</ng-container>
+
+<!-- 多树切换器 -->
+<ng-container *ngIf="isShowTaber">
+  <div class="myRow">
+    <nz-radio-group [(ngModel)]="treeIndex" (ngModelChange)="treeIndexChange($event)">
+      <label *ngFor="let item of treeIndexs;let index = index" nz-radio [nzValue]="item.value">{{item.label}}</label>
+    </nz-radio-group>
+  </div>
+</ng-container>
+
+<!-- 树内容 -->
+<div class="myRow">
+  <ng-container *ngIf="isCustomed; else treeTemplate">
+    <ng-container *ngIf="_custom; else _customTpl"> {{_custom}} </ng-container>
+  </ng-container>
+  <ng-template #treeTemplate>
+    <ng-container *ngFor="let item of data;let index = index">
+      <ng-container *ngIf="index===treeIndex">
+        <div style="overflow: scroll;" [ngStyle]="_treeBoxStyle" class="myRow">
+          <ng-container *ngIf="isShowChecked; else fullTree">
+            <!-- 已选树 -->
+            <nz-tree [ngStyle]="{'display': index===treeIndex&&isShowChecked?'inherit':'none'}" [(ngModel)]="item.checkedNodes"
+              [nzSearchValue]="searchValue" [nzCheckable]="checkable" [nzCheckStrictly]="isCheckStrictly"
+              (nzOnSearchNode)="mouseAction('search',$event)" (nzCheckBoxChange)="onCheckChange($event,treeIndex)"
+              (nzClick)="mouseAction('click', $event)" (nzExpandChange)="mouseAction('expand',$event)" (nzDblClick)="mouseAction('dblclick',$event)">
+            </nz-tree>
+          </ng-container>
+          <ng-template #fullTree>
+            <!-- 全树 -->
+            <nz-tree [ngStyle]="{'display': index===treeIndex&&!isShowChecked?'inherit':'none'}" [(ngModel)]="item.data"
+              [nzSearchValue]="searchValue" [nzCheckable]="checkable" [nzCheckStrictly]="isCheckStrictly"
+              (nzOnSearchNode)="mouseAction('search',$event)" (nzCheckBoxChange)="onCheckChange($event,treeIndex)"
+              (nzClick)="mouseAction('click', $event)" (nzExpandChange)="mouseAction('expand',$event)" (nzDblClick)="mouseAction('dblclick',$event)">
+            </nz-tree>
+          </ng-template>
+        </div>
+      </ng-container>
+    </ng-container>
+    <div class="myRow">
+      已选择：
+      <a (click)="toggleTreeChecked()" [ngStyle]="{'backgroundColor': isShowChecked?'#eee':'inherit'}">{{checkedList.length}}个</a>
+      <a (click)="clearChecked()">重置</a>
+    </div>
+  </ng-template>
+</div>

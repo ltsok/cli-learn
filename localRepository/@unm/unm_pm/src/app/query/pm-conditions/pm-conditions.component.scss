@@ -1,0 +1,49 @@
+$width:200px;
+
+input {
+  width: $width
+}
+
+.select {
+  width: $width;
+}
+
+.form-row {
+  height: 30px;
+}
+
+.form-label {
+  // text-align: left
+}
+
+.no-border {
+  border: none;
+}
+
+.no-border.ant-radio-button-wrapper:first-child {
+  border-left: none;
+}
+
+::ng-deep .ant-collapse .ant-collapse-item-disabled.mycollapse .ant-collapse-header {
+  cursor: auto;
+}
+
+::ng-deep .ant-collapse .ant-collapse-item.mycollapse .ant-collapse-header {
+  cursor: auto;
+}
+
+::ng-deep .no-border.ant-radio-button-wrapper:not(:first-child)::before {
+  width: 0px;
+}
+
+::ng-deep .no-border.ant-radio-button-wrapper-checked {
+  box-shadow: none;
+}
+
+::ng-deep .no-border.ant-radio-button-wrapper-checked:hover {
+  box-shadow: none;
+}
+
+.operate-button {
+  margin-right: 15px;
+}

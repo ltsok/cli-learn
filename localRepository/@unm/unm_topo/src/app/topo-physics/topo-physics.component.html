@@ -1,0 +1,16 @@
+<div id="topology" style="width:100%;height:100%">
+  <kendo-splitter style="border: none;height: 100%">
+    <kendo-splitter-pane style="border: 1px solid #e4e4e4;height:100%;" [collapsible]="true" size="240px" min="100px"
+      max="90%">
+      <topo-tree (selectClick)="treeSelect($event)" [dataSource]="treeData" [topoSelect]="topoSelectId" [dataChange]="pushData"
+        [alarmChange]="almPushData"></topo-tree>
+    </kendo-splitter-pane>
+    <kendo-splitter-pane style="border: 1px solid #e4e4e4;height:100%;overflow-y:hidden;overflow-x:hidden;">
+      <div style="width:100%;height:100%;">
+        <waf-topology [id]="'topology'" [mapStyle]="{'width':'100%', 'height':'100%', 'overViewWidth':'150px', 'overViewHeight':'150px', 'overViewLocation':2}"
+          [thirdparty]="'qunee'" (onSelect)="onSelect($event);" (onRefresh)="onRefresh($event);" (onSave)="onSave($event);"></waf-topology>
+      </div>
+    </kendo-splitter-pane>
+  </kendo-splitter>
+  <topo-drawer [neId]="neId"></topo-drawer>
+</div>

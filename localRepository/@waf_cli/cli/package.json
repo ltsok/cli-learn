@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_cli/cli",
+        "scope": "@waf_cli",
+        "escapedName": "@waf_cli%2fcli",
+        "name": "@waf_cli/cli",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\lits103"
+    ]
+  ],
+  "_from": "@waf_cli/cli@latest",
+  "_id": "@waf_cli/cli@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_cli/cli",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_cli/cli",
+    "scope": "@waf_cli",
+    "escapedName": "@waf_cli%2fcli",
+    "name": "@waf_cli/cli",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_cli%2fcli/-/cli-1.0.0.tgz",
+  "_shasum": "c6a8cd1aa57e4cdca896af4d8c75e5a857adac98",
+  "_shrinkwrap": null,
+  "_spec": "@waf_cli/cli",
+  "_where": "C:\\Users\\lits103",
+  "author": {
+    "name": "chenggang"
+  },
+  "bin": {
+    "waf": "./bin/waf.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.11",
+    "art-template": "^4.12.2",
+    "cli-format": "^3.0.9",
+    "colors": "^1.1.2",
+    "commander": "^2.11.0",
+    "fs-extra": "^4.0.2",
+    "less": "2.7.0",
+    "node-sass": "^4.9.2",
+    "node-xlsx": "^0.11.0"
+  },
+  "description": "WAF CLI",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "c6a8cd1aa57e4cdca896af4d8c75e5a857adac98",
+    "tarball": "http://10.170.190.45:4873/@waf_cli%2fcli/-/cli-1.0.0.tgz"
+  },
+  "files": [
+    "bin",
+    "package.json"
+  ],
+  "name": "@waf_cli/cli",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

@@ -1,0 +1,116 @@
+STYLE RESET
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "microsoft yahei", Arial;
+  font-weight: normal;
+  font-size: 14px;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/*STYLE RESET*/
+.datatable-toolbar {
+  padding: 0 3px;
+  font-size: 18px;
+  margin-left: 10px;
+  float:left;
+}
+
+.gridTool {
+  padding: 0 3px;
+  font-size: 18px;
+  margin-right: 10px;
+  float:right;
+}
+
+.firstCmd {
+  margin-right: 16px;
+}
+
+.selectAll {
+  padding: 0 3px;
+  font-size: 18px;
+  margin-left: 10px;
+  float:left;
+}
+
+.activedTool {
+  color: #999999;
+}
+
+.tableGridTool {
+  color: #40a9ff;
+  padding: 0 3px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.processing {
+  animation: mymove 1s infinite linear;
+  -webkit-animation: mymove 1s infinite linear; //Safari and Chrome
+}
+
+@keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.colSetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.whole-cell {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.whole-cell:hover {
+  text-overflow: inherit;
+  overflow: visible;
+}
+
+/*:host ::ng-deep .k-grid th {
+  padding: 0px;
+  text-align: center;
+}
+
+:host ::ng-deep .k-grid-table > tbody > tr:hover {
+  background-color: #eaf0fd; // height: 60px;
+}*/
+
+// ::ng-deep .k-grid-table>tbody>tr>td:hover {
+//   overflow: visible;
+// }
+

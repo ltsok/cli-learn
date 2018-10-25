@@ -1,0 +1,55 @@
+<div id="{{boxTitle}}" class="content" [ngStyle]="{'width':width}">
+  <h3>{{boxTitle}}</h3>
+  <ul #ul [ngStyle]="{'height':height}">
+    <ng-container *ngFor="let data of dataList;let i = index">
+      <li *ngIf="data.isHasDish" #li (click)="select(li,data.dishId,data.name,$event)" (contextmenu)="rightContextMenu($event,i,li)"
+        title="盘名称：{{data.name}}&#10;盘类型：{{data.name}}&#10;友好名：{{data.friendName}}&#10;单盘备注：{{data.remark}}" [ngClass]="getClass(data)"
+        class="over" [ngStyle]="getStyle(data)">
+        <div>
+          <i [ngStyle]="getAlarmColor(data.lightColor)" title="告警灯"></i>
+          <span title="单板中断" [class.hide]="data.isBreakLine">
+            <i></i>
+          </span>
+          <span *ngIf="getClass(data)==='across'" [ngStyle]="getTextAreaSize(0,data.width)">
+            {{data.name}}
+          </span>
+          <span *ngIf="getClass(data)==='good'" [ngStyle]="getTextAreaSize(1,data.height)">
+            <ng-container *ngFor="let n of replaceName(data.name)">{{n}}&#10;</ng-container>
+          </span>
+        </div>
+        <div *ngIf="adecimal===1">
+          {{data.slotno}}
+        </div>
+        <div *ngIf="adecimal===0">
+          {{data.slotno.toString(16).toLocaleUpperCase()}}
+        </div>
+        <b></b>
+      </li>
+      <li class="bad over" *ngIf="!data.isHasDish" #li (click)="select(li,-1,'',$event)" (contextmenu)="rightContextMenu($event,i,li)"
+        [ngStyle]="getStyle(data)">
+        <div *ngIf="data.width<data.height" style="position: absolute;bottom: 8px;text-align: center;width: 100%;">
+          <ng-container *ngIf="adecimal===1">
+            {{data.slotno}}
+          </ng-container>
+          <ng-container *ngIf="adecimal===0">
+            {{data.slotno.toString(16).toLocaleUpperCase()}}
+          </ng-container>
+        </div>
+        <div *ngIf="data.width>data.height" style="position: absolute;right: 8px;">
+          <ng-container *ngIf="adecimal===1">
+            {{data.slotno}}
+          </ng-container>
+          <ng-container *ngIf="adecimal===0">
+            {{data.slotno.toString(16).toLocaleUpperCase()}}
+          </ng-container>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+
+<div #div class="contextmenu">
+  <a *ngIf="isNull" (click)="itemClick(0)">添加单盘</a>
+  <a *ngIf="!isNull" (click)="itemClick(1)">删除单盘</a>
+  <a *ngIf="!isNull" (click)="itemClick(2)">更换单盘</a>
+</div>

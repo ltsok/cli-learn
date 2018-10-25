@@ -1,0 +1,114 @@
+<nz-collapse [nzBordered]="true">
+  <nz-collapse-panel [ngStyle]="panel.customStyle" [ngClass]="'mycollapse'" [nzHeader]="collapseHeaderTemplate"
+    [nzActive]="panel.active" [nzDisabled]="panel.disabled" [nzShowArrow]="panel.arrow">
+    <form nz-form>
+      <!-- 选择模板 -->
+      <nz-form-item class="form-row">
+        <nz-form-label nzSpan="2" class="form-label">模板</nz-form-label>
+        <nz-form-control nzSpan="22">
+          <nz-select class="select" nzPlaceHolder="未选择模板" [(ngModel)]="template" name="template">
+            <nz-option *ngFor="let option of templateList" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <ng-container *ngIf="isCurrent; else historyTemplate">
+        <!-- 性能代码类型 -->
+        <nz-form-item class="form-row">
+          <nz-form-label nzSpan="2" class="form-label">性能代码类型</nz-form-label>
+          <nz-form-control nzSpan="22">
+            <nz-checkbox-wrapper (nzOnChange)="onCodeTypeChange($event)">
+              <label nz-checkbox *ngFor="let item of pmCodeTypes" [nzValue]="item.value" [ngModel]="item.checked"
+                [name]="item.value">{{item.label}}</label>
+            </nz-checkbox-wrapper>
+            <!-- <nz-checkbox-group [(ngModel)]="pmCodeTypes" name="pmCodeTypes"></nz-checkbox-group> -->
+          </nz-form-control>
+        </nz-form-item>
+        <!-- 性能时刻 -->
+        <nz-form-item class="form-row">
+          <nz-form-label nzSpan="2" class="form-label">性能时刻</nz-form-label>
+          <nz-form-control nzSpan="22">
+            <nz-radio-group [(ngModel)]="pmTime" name="pmTime">
+              <label nz-radio-button *ngFor="let item of pmTimes" [nzValue]="item.value">{{item.label}}</label>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+      </ng-container>
+      <ng-template #historyTemplate>
+        <!-- 时间 -->
+        <nz-form-item class="form-row">
+          <nz-form-label nzSpan="2" class="form-label">时间</nz-form-label>
+          <nz-form-control nzSpan="22">
+            <nz-radio-group [(ngModel)]="timePeriod" name="timePeriod">
+              <label nz-radio-button class="no-border" *ngFor="let item of timePeriods" [nzValue]="item.value">{{item.label}}</label>
+              <nz-range-picker *ngIf="timePeriod==='custom'" [nzAllowClear]="false" [(ngModel)]="dateRange" nzShowTime
+                name="dateRange"></nz-range-picker>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+      </ng-template>
+
+      <!-- 性能类型 -->
+      <nz-form-item class="form-row">
+        <nz-form-label nzSpan="2" class="form-label">性能类型</nz-form-label>
+        <nz-form-control nzSpan="22">
+          <nz-radio-group [(ngModel)]="pmType" (ngModelChange)="onPMTypeChange($event)" name="pmType">
+            <label nz-radio-button class="no-border" *ngFor="let item of pmTypes" [nzValue]="item.value">{{item.label}}</label>
+          </nz-radio-group>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 对象、代码 -->
+      <nz-form-item class="form-row">
+        <nz-form-label nzSpan="2" class="form-label">对象</nz-form-label>
+        <nz-form-control nzSpan="4">
+          <input nz-input readonly [(ngModel)]="objects" name="objects" (click)="showModal()">
+          <nz-modal [(nzVisible)]="isObjectsVisible" nzTitle="选择对象" [nzFooter]="null" [nzClosable]="true">
+            <tree-selecter #objectsTree [data]="objectsData" [(checkedList)]="objects1" [isCustomView]="true"></tree-selecter>
+            <div nz-row nzType="flex" nzGutter="16" nzJustify="center" nzAlign="middle">
+              <div nz-col [nzSpan]="12" style="text-align: right;">
+                <button nz-button [nzType]="'primary'" (click)="objectsOk()"><span>确定</span></button>
+              </div>
+              <div nz-col [nzSpan]="12">
+                <button nz-button [nzType]="'cancel'" (click)="objectsCancel()"><span>取消</span></button>
+              </div>
+            </div>
+          </nz-modal>
+        </nz-form-control>
+        <nz-form-label nzSpan="2" class="form-label">性能代码</nz-form-label>
+        <nz-form-control nzSpan="4">
+          <input nz-input readonly [(ngModel)]="pmCodes" name="pmCodes" nz-popover [(nzVisible)]="isPmCodesVisible"
+            (nzVisibleChange)="pmCodesChange($event)" nzTrigger="click" [nzContent]="pmCodesTreeTpl" nzPlacement="bottomLeft">
+          <ng-template #pmCodesTreeTpl>
+            <tree-selecter #pmCodesTree [data]="pmCodesData" [(checkedList)]="pmCodes1" [isShowLabel]="false"></tree-selecter>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <!-- 操作按钮 -->
+    <div nz-row>
+      <div nz-col nzSpan="10" nzOffset="2">
+        <button nz-button class="operate-button" nzType="primary" [nzLoading]="isQuerying" (click)="onQuery()">
+          查询
+        </button>
+        <button nz-button class="operate-button" nzType="cancel" (click)="initQuery()">另存为</button>
+        <button nz-button class="operate-button" nzType="cancel" (click)="setFormData()">重置</button>
+      </div>
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>
+<ng-template #collapseHeaderTemplate>
+  <div>
+    <a (click)="toggleCollapse()">
+      <i class="fhfont" [ngClass]="{'fh-zhankaitiaojian1': panel.active,'fh-zhedietiaojian1': !panel.active}"></i>
+    </a>
+    <span>已选择：</span>
+    <nz-tag *ngFor="let tag of tags; let i = index;" nzMode="closeable" (nzAfterClose)="onAfterTagClose(tag)">
+      {{ sliceTagName(tag) }}
+    </nz-tag>
+    <button style="height: 23px;" nz-button class="operate-button" nzType="cancel" [nzLoading]="isQuerying" (click)="onQuery()">
+      查询
+    </button>
+    <!-- <button style="height: 23px;" nz-button class="operate-button" nzType="cancel" (click)="onQuery()">initQuery</button>
+    <button style="height: 23px;" nz-button class="operate-button" nzType="cancel" (click)="isQuerying=!isQuerying">isQuerying</button>
+    <button style="height: 23px;" nz-button class="operate-button" nzType="cancel" (click)="isCurrent=!isCurrent">isCurrent</button> -->
+  </div>
+</ng-template>

@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_resource/iconfont@1.0.0",
+        "scope": "@waf_resource",
+        "escapedName": "@waf_resource%2ficonfont",
+        "name": "@waf_resource/iconfont",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_resource/iconfont@1.0.0",
+  "_id": "@waf_resource/iconfont@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_resource/iconfont",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_resource/iconfont@1.0.0",
+    "scope": "@waf_resource",
+    "escapedName": "@waf_resource%2ficonfont",
+    "name": "@waf_resource/iconfont",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_resource%2ficonfont/-/iconfont-1.0.0.tgz",
+  "_shasum": "5ed4e2110a61846fe8bc87dd503772fde1f35ef0",
+  "_shrinkwrap": null,
+  "_spec": "@waf_resource/iconfont@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {},
+  "description": "theme模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "5ed4e2110a61846fe8bc87dd503772fde1f35ef0",
+    "tarball": "http://10.170.190.45:4873/@waf_resource%2ficonfont/-/iconfont-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_resource/iconfont",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

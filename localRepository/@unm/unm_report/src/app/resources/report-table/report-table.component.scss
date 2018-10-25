@@ -1,0 +1,61 @@
+.gridTool {
+  padding: 0 3px;
+  font-size: 18px;
+}
+
+.activedTool {
+  color: #999999;
+}
+
+.processing {
+  animation: mymove 1s infinite linear;
+  -webkit-animation: mymove 1s infinite linear; //Safari and Chrome
+}
+
+@keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.colSetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.whole-cell {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.whole-cell:hover {
+  text-overflow: inherit;
+  overflow: visible;
+}
+
+::ng-deep .k-grid th {
+  padding: 0px;
+  text-align: center;
+}
+
+::ng-deep .k-grid-table>tbody>tr:hover {
+  background-color: #eaf0fd; // height: 60px;
+}
+
+// ::ng-deep .k-grid-table>tbody>tr>td:hover {
+//   overflow: visible;
+// }

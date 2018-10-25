@@ -1,0 +1,9 @@
+<!--全局功能：loading框-->
+<div id="coverload">
+  <div id="graycover">
+    <nz-spin id="loading" [nzSize]="'large'"></nz-spin>
+  </div>
+</div>
+
+<!--全局功能：回到顶部-->
+<i [ngClass]="{'waffont waf-to-top go-top':true,'go-top-active':isScroll}" (click)="onTop()"></i>

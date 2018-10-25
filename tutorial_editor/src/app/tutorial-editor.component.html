@@ -1,0 +1,39 @@
+<div class="editor" [ngStyle]="{'width': _width}">
+  <div class="editor-modify">
+    <nz-button-group [nzSize]="size" class="btngp-left">
+      <button nz-button nzType="primary" *ngIf='isAuth && !editorMode' (click)='onEditorMode()'><i
+        class="anticon anticon-edit"></i>
+        {{'tutorial.editor.edit' | translate}}
+      </button>
+      <button nz-button nzType="primary" *ngIf='isAuth && editorMode' (click)='onEditorMode()'><i
+        class="anticon anticon-save"></i>
+        {{'tutorial.editor.save' | translate }}
+      </button>
+      <button nz-button nzType="primary" *ngIf='isAuth && editorMode' (click)='withoutSave()'><i
+        class="anticon anticon-close"></i>
+        {{'tutorial.editor.quit' | translate }}
+      </button>
+      <button nz-button nzType="primary" *ngIf='isAuth' (click)='wordExport()' id="export-btn"><i
+        class="anticon anticon-export"></i>
+        {{'tutorial.editor.export'| translate }}
+      </button>
+    </nz-button-group>
+    <nz-upload
+      [nzCustomRequest]="upload">
+      <button nz-button nzType="primary" id="import-btn">
+        <i class="anticon anticon-upload"></i><span>{{'tutorial.editor.import' | translate }}</span>
+      </button>
+    </nz-upload>
+  </div>
+  <div #editor id="tutorial-editor" [ngStyle]="{'border':editorMode ? '1px solid #ccc' : 'none', 'top': '-1px'}">
+  </div>
+</div>
+<div class="toc-container">
+  <nz-anchor *ngIf="anchors.length" [nzOffsetTop]="100" [nzShowInkInFixed]="true">
+    <nz-link *ngFor="let h1Tag of anchors" nzHref="{{'#' + h1Tag.anchorId}}" nzTitle="{{h1Tag.anchorName}}">
+      <nz-link *ngFor="let h2Tag of h1Tag.child_h2" [style.display]="h1Tag.child_h2.length ? 'block' : 'none'"
+               nzHref="{{'#' + h2Tag.anchorId}}" nzTitle="{{h2Tag.anchorName}}"></nz-link>
+    </nz-link>
+  </nz-anchor>
+</div>
+

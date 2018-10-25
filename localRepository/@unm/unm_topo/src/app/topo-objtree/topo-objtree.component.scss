@@ -1,0 +1,88 @@
+div.objtree {
+  width: 100%;
+  background-color: white;
+  padding-top: 8px;
+}
+
+div.keyword {
+  position: relative;
+  margin-left: 8px;
+}
+
+.la-down {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 5px solid #5f5f5f;
+  top: 10px;
+  left: 25px;
+  z-index: 10;
+}
+
+.shrink {
+  position: absolute;
+  color: #74b0f3;
+  left: 192px;
+  top: -5px;
+}
+
+.anticon-search {
+  position: absolute;
+  z-index: 10;
+  top: 5px;
+  left: 5px;
+}
+
+i.active {
+  background-color: #98e1ff;
+}
+
+i.anticon-double-left,
+i.anticon-double-right {
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 27px;
+  color: #1890ff;
+  cursor: pointer;
+}
+
+i.anticon-close-circle {
+  position: absolute;
+  right: 20px;
+  top: 7px;
+  font-size: 12px;
+  color: #bfbfbf;
+}
+
+i.anticon-close-circle:hover {
+  color: #8f8f8f;
+}
+
+span.node {
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+}
+
+span.node::after {
+  clear: both;
+}
+
+:host ::ng-deep .ant-tree li span.ant-tree-switcher {
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  text-align: right;
+}
+
+:host ::ng-deep .ant-tree li {
+  padding: 0;
+  margin: 3px 0;
+}
+
+:host ::ng-deep ul {
+  font-size: 0;
+}

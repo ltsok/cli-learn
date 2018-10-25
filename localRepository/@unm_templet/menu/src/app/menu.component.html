@@ -1,0 +1,32 @@
+<div class="menu">
+
+  <!-- 主导航 -->
+  <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'">
+    <li nz-submenu *ngFor="let rootMenuItem of rootMenuItems" [ngStyle]="{'display':rootMenuItem.isHide ? 'none' : 'block' }" (click)='onMenuItemClick(rootMenuItem)'>
+      <span title>
+        <i class="fhfont {{rootMenuItem.icon}}"></i>{{rootMenuItem.name | translate}}</span>
+      <ul>
+        <li nz-menu-group *ngFor="let secondMenuItem of rootMenuItem.children" [ngStyle]="{'display':secondMenuItem.isHide ? 'none' : 'block' }">
+          <span title>{{secondMenuItem.name | translate}}</span>
+          <ul>
+            <li nz-menu-item *ngFor="let thridMenuItem of secondMenuItem.children"  [nzSelected]='breadcrumb[2]?(thridMenuItem.id == breadcrumb[2].id):false'
+            [ngStyle]="{'display':thridMenuItem.isHide ? 'none' : 'block' }" (click)="onMenuItemClick(thridMenuItem)">{{thridMenuItem.name | translate}}</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- 面包屑 -->
+  <div class="menu-breadcrumb">
+    <div class="left">
+      <div class='title' *ngIf='breadcrumb[2]'>{{breadcrumb[2].name | translate}}</div>
+    </div>
+    <div class="right" *ngIf='(breadcrumb.length > 0) && (breadcrumb[breadcrumb.length - 1].isShowBreadcrumb)'>
+      <span *ngIf='breadcrumb.length > 0'>{{'menu.breadcrumb.current.position' | translate}} :</span>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item *ngFor="let item of breadcrumb" [ngStyle]="{'display':item.isHide ? 'none' : 'inline' }">{{item.name | translate}}</nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </div>
+  </div>
+</div>

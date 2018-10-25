@@ -1,0 +1,9 @@
+{
+  "name": "@tutorial_resource/iconfont",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "src",
+    "package.json"
+  ]
+}

@@ -1,0 +1,26 @@
+.spliter {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 15px;
+  background-color: #F0F2F5;
+}
+
+.contentBox {
+  padding: 5px 10px;
+}
+
+.statisticHeader>sub {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+::ng-deep .ant-drawer-content-wrapper.ant-drawer-content {
+  // box-shadow: none;
+  height: auto;
+  margin-top: 200px;
+}
+
+::ng-deep .ant-collapse-borderless>.ant-collapse-item {
+  border-bottom: none;
+}

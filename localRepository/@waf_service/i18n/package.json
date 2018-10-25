@@ -1,0 +1,70 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_service/i18n@1.0.0",
+        "scope": "@waf_service",
+        "escapedName": "@waf_service%2fi18n",
+        "name": "@waf_service/i18n",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_service/i18n@1.0.0",
+  "_id": "@waf_service/i18n@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_service/i18n",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_service/i18n@1.0.0",
+    "scope": "@waf_service",
+    "escapedName": "@waf_service%2fi18n",
+    "name": "@waf_service/i18n",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@unm_templet/global",
+    "/@waf_service/http",
+    "/@waf_service/push",
+    "/@waf_service/theme",
+    "/@waf_service/tpi"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_service%2fi18n/-/i18n-1.0.0.tgz",
+  "_shasum": "35ef592a0e4e06be7070cdf9023e63646cc00c11",
+  "_shrinkwrap": null,
+  "_spec": "@waf_service/i18n@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "@ngx-translate/core": "^10.0.0",
+    "@ngx-translate/http-loader": "^3.0.0",
+    "@waf_resource/i18n": "1.0.0",
+    "@waf_service/event": "1.0.0"
+  },
+  "description": "i18n模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "35ef592a0e4e06be7070cdf9023e63646cc00c11",
+    "tarball": "http://10.170.190.45:4873/@waf_service%2fi18n/-/i18n-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_service/i18n",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

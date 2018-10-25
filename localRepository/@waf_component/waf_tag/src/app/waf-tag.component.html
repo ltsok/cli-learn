@@ -1,0 +1,8 @@
+<div nz-row class="tag-row" *ngIf="!tagItem.closed">
+  <div nz-col class="label-col">
+    <label>{{tagItem.label}}</label>
+  </div>
+  <div nz-col style="width:15px;float:left">
+    <i class="anticon anticon-cross" (click)="closeTag($event)"></i>
+  </div>
+</div>

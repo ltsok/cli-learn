@@ -1,0 +1,8 @@
+.pm-15m {
+  text-align:left;
+  margin-top:10px;
+}
+
+:host ::ng-deep .ant-tabs-nav .ant-tabs-tab-disabled .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab .anticon-close {
+  height: 0px;
+}

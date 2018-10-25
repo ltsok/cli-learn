@@ -1,0 +1,40 @@
+<div style="overflow-x: hidden;">
+  <!-- 总体概览 -->
+  <div class="contentBox">
+    <div nz-row nzType="flex" class="rowHeader">
+      {{"unm.report.distributions.distributions" | translate}}
+    </div>
+    <div nz-row nzType="flex">
+      <ng-container *ngFor="let item of numSummary;let index = index">
+        <div nz-col nzSpan="4">
+          <div class="summaryBox" (click)="viewDetail(item.type)">
+            <span class="summaryIcon">
+              <i class="fhfont" style="font-size: 48px;" [ngClass]="item.icon" [ngStyle]="{'color': item.color}"></i>
+            </span>
+            <span class="summaryType">{{item.label}}</span>
+            <span class="summaryNum">{{item.value}}个</span>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="spliter"></div>
+
+  <!-- 类别统计图 -->
+  <div class="contentDivider">
+    <div nz-row nzType="flex" nzGutter="16">
+      <div nz-col nzSpan="12">
+        <div class="chart-box">
+          <report-chart-card type="ne" dataFields="default"></report-chart-card>
+        </div>
+      </div>
+      <div nz-col nzSpan="12">
+        <div class="chart-box">
+          <report-chart-card type="board" dataFields="default"></report-chart-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

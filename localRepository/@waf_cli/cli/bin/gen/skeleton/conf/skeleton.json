@@ -1,0 +1,32 @@
+{
+  "mappings": [
+    {
+      "key": "waf_service",
+      "value": "service"
+    },
+    {
+      "key": "waf_component",
+      "value": "component"
+    },
+    {
+      "key": "waf_templet",
+      "value": "templet"
+    },
+    {
+      "key": "waf_func",
+      "value": "module"
+    },
+    {
+      "key": "page",
+      "value": "page"
+    },
+    {
+      "key": "prod",
+      "value": "module"
+    },
+    {
+      "key": "prod_component",
+      "value": "prod_component"
+    }
+  ]
+}

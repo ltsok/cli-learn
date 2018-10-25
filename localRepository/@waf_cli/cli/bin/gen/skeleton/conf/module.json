@@ -1,0 +1,23 @@
+{
+  "mapping": [
+      {"sdir":"/skeleton_module", "src":"tsconfig.ftl", "ddir":"", "dest":"tsconfig.json"},
+      {"sdir":"/skeleton_module", "src":"package.ftl", "ddir":"", "dest":"package.json"},
+      {"sdir":"/skeleton_module", "src":"README.ftl", "ddir":"", "dest":"README.md"},
+      {"sdir":"/skeleton_module", "src":"editorconfig.ftl", "ddir":"", "dest":".editorconfig"},
+      {"sdir":"/skeleton_module", "src":"index.ftl", "ddir":"", "dest":"index.ts"},
+  
+      {"sdir":"/skeleton_module/src/app", "src":"xxx.module.ftl", "ddir":"/src/app", "dest":"{{module.name}}.module.ts"},
+      {"sdir":"/skeleton_module/src/app", "src":"xxx.constant.ftl", "ddir":"/src/app", "dest":"{{module.name}}.constant.ts"},
+      {"sdir":"/skeleton_module/src/app", "src":"xxx-routing.module.ftl", "ddir":"/src/app", "dest":"{{module.name}}-routing.module.ts"},
+      {"sdir":"/skeleton_module/src/app", "src":"xxx.component.ftl", "ddir":"/src/app", "dest":"{{module.name}}.component.ts"},
+      {"sdir":"/skeleton_module/src/app", "src":"xxx.component.html.ftl", "ddir":"/src/app", "dest":"{{module.name}}.component.html"},
+      {"sdir":"/skeleton_module/src/app", "src":"xxx.component.scss.ftl", "ddir":"/src/app", "dest":"{{module.name}}.component.scss"},
+  
+      {"sdir":"/skeleton_module/src/app/default", "src":"default.component.ftl", "ddir":"/src/app/default", "dest":"default.component.ts"},
+      {"sdir":"/skeleton_module/src/app/default", "src":"default.component.html.ftl", "ddir":"/src/app/default", "dest":"default.component.html"},
+      {"sdir":"/skeleton_module/src/app/default", "src":"default.component.scss.ftl", "ddir":"/src/app/default", "dest":"default.component.scss"},
+
+      {"sdir":"/skeleton_module/src/app/service", "src":"xxx-menu.service.ftl", "ddir":"/src/app/service", "dest":"{{module.name}}-menu.service.ts"}
+    ]
+  }
+  

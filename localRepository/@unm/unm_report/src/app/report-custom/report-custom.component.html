@@ -1,0 +1,129 @@
+<nz-layout>
+  <nz-sider style="background-color:#ffffff;width:200px;margin-right:16px;">
+    <div nz-row class="li-item" nzType="flex" nzJustify="space-between" nzAlign="middle">
+      <div nz-col nzSpan="12">
+        自定义报表
+      </div>
+      <div nz-col nzSpan="12" style="text-align:right;">
+        <a (click)="addReport()">
+          <i class="fhfont fh-guolv"></i>
+        </a>
+      </div>
+    </div>
+    <nz-divider class="divider"></nz-divider>
+    <nz-list [nzDataSource]="list" [nzItemLayout]="'horizontal'" [nzRenderItem]="itemTemplate" [nzSplit]="false">
+      <ng-template #itemTemplate let-item>
+        <nz-list-item [nzContent]="contentTemplate" (mouseover)="item.isHovered=true" (mouseleave)="item.isHovered=false"
+          (click)="reportClick(item)" [ngClass]="{'selected': item.isSelected}" class="li-item">
+          <ng-template #contentTemplate>
+            <div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle" style="width:100%">
+              <div nz-col nzSpan="14">
+                <span style="overflow-x: hidden">{{item.title}}</span>
+              </div>
+              <div nz-col nzSpan="10" style="text-align:right;">
+                <ng-container *ngIf="item.isHovered">
+                  <a>
+                    <i class="fhfont fh-guolv"></i>
+                  </a>
+                  <a>
+                    <i class="fhfont fh-guolv"></i>
+                  </a>
+                </ng-container>
+              </div>
+            </div>
+          </ng-template>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </nz-sider>
+  <nz-layout>
+    <nz-content style="min-height:650px;background-color:#ffffff">
+
+      <!-- ****************************************************查询模式***************************************** -->
+      <ng-container *ngIf="!isEditable">
+        <!-- 下拉、按钮部分 -->
+        <div nz-row class="conditions" nzType="flex" nzGutter="48" nzJustify="start" nzAlign="middle">
+          <div nz-col>
+            <!-- 对象范围 -->
+            {{"unm.report.conditions.objects" | translate}}
+          </div>
+          <div nz-col>
+            <nz-tree-select style="width: 200px" [nzNodes]="objectsList" nzShowSearch nzCheckable nzPlaceHolder="{{'unm.report.conditions.all' | translate}}"
+              [(ngModel)]="objectId" (ngModelChange)="onObjectsChange($event)">
+            </nz-tree-select>
+          </div>
+          <div nz-col>
+            <button nz-button nzType="primary" [nzLoading]="isQuerying" (click)="initQuery()">{{"unm.report.conditions.doQuery"
+              | translate}}</button>
+          </div>
+        </div>
+
+        <div class="spliter"></div>
+
+        <!-- 表格部分 -->
+        <div>
+          <report-table [type]="'custom'" [data]="data" [total]="total"></report-table>
+        </div>
+      </ng-container>
+
+      <!-- ****************************************************编辑模式***************************************** -->
+      <ng-container *ngIf="isEditable">
+        <form nz-form class="grid-box">
+          <!-- 名称 -->
+          <nz-form-item class="editBox" nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="2">名称</nz-form-label>
+            <nz-form-control nzSpan="22">
+              <input nz-input [(ngModel)]="reportName" name="reportName" style="width: 400px;">
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 对象范围 -->
+          <nz-form-item class="editBox" nzType="flex" nzJustify="center" nzAlign="middle">
+            <nz-form-label nzSpan="2">对象范围</nz-form-label>
+            <nz-form-control nzSpan="22">
+              <input nz-input [(ngModel)]="objects" name="objects" style="width: 400px;">
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 表格列 -->
+          <nz-form-item class="editBox" nzType="flex" nzJustify="space-around" nzAlign="top">
+            <nz-form-label nzSpan="2">表格列</nz-form-label>
+            <nz-form-control nzSpan="22">
+              <div nz-row nzGutter="16" nzType="flex" nzJustify="start" nzAlign="top">
+                <ng-container *ngFor="let category of colCategories;let index = index">
+                  <div nz-col>
+                    <p>
+                      <label nz-checkbox [(ngModel)]="category.allChecked" (ngModelChange)="categoryChange(category.allChecked,category.name)"
+                        [nzIndeterminate]="category.indeterminate" name="categoryName" class="checkContainer">
+                        {{category.name}}
+                      </label>
+                    </p>
+                    <p style="border:1px solid #eeeeee;height: 200px;">
+                      <nz-checkbox-wrapper class="checkContainer" (nzOnChange)="colChange($event,index)">
+                        <ul class="col-set-list">
+                          <li *ngFor="let opt of category.colsOptions">
+                            <label nz-checkbox [nzValue]="opt.value" [(ngModel)]="opt.checked" [ngModelOptions]="{standalone:true}">{{opt.label}}</label>
+                          </li>
+                        </ul>
+                      </nz-checkbox-wrapper>
+                    </p>
+                  </div>
+                </ng-container>
+              </div>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+
+        <div class="spliter"></div>
+
+        <div class="grid-box">
+          预览
+        </div>
+
+        <div class="spliter"></div>
+
+        <div class="grid-box">
+          <button nz-button nzType="primary">{{"unm.report.conditions.doQuery" | translate}}</button>
+        </div>
+      </ng-container>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

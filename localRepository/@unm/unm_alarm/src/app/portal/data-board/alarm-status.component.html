@@ -1,0 +1,14 @@
+<div class="alarm-status">
+    <div style="padding:20px">
+        <div style="float:left;font-size:16px;color:#ffffff"> 告警统计-状态</div>
+        <div style="float:right ">
+            <span (click)="refreshData() " nzPlacement="bottom " nz-tooltip nzTitle="刷新 ">
+                <i class="icon fhfont fh-shuaxin " style="margin-left:10px; "></i>
+            </span>
+
+        </div>
+    </div>
+    <div>
+        <waf-echart [style]="{ 'width': '350px', 'height': '400px'} "></waf-echart>
+    </div>
+</div>

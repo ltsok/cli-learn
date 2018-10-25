@@ -1,0 +1,31 @@
+
+@font-face {font-family: "waffont";
+  src: url('iconfont.eot?t=1536644921654'); /* IE9*/
+  src: url('iconfont.eot?t=1536644921654#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1536644921654') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1536644921654#waffont') format('svg'); /* iOS 4.1- */
+}
+
+.waffont {
+  font-family:"waffont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.waf-to-top:before { content: "\e6e0"; }
+
+.waf-user:before { content: "\e634"; }
+
+.waf-earth:before { content: "\e616"; }
+
+.waf-up:before { content: "\e632"; }
+
+.waf-down:before { content: "\e631"; }
+
+.waf-split-line:before { content: "\e69b"; }
+
+.waf-logout:before { content: "\e60a"; }
+

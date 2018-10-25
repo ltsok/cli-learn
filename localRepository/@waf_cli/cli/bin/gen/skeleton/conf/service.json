@@ -1,0 +1,15 @@
+{
+    "mapping": [
+        {"sdir":"/skeleton_service", "src":"tsconfig.ftl", "ddir":"", "dest":"tsconfig.json"},
+        {"sdir":"/skeleton_service", "src":"package.ftl", "ddir":"", "dest":"package.json"},
+        {"sdir":"/skeleton_service", "src":"README.ftl", "ddir":"", "dest":"README.md"},
+        {"sdir":"/skeleton_service", "src":"editorconfig.ftl", "ddir":"", "dest":".editorconfig"},
+        {"sdir":"/skeleton_service", "src":"index.ftl", "ddir":"", "dest":"index.ts"},
+    
+        {"sdir":"/skeleton_service/src/app", "src":"xxx.module.ftl", "ddir":"/src/app", "dest":"{{module.name}}.module.ts"},
+        {"sdir":"/skeleton_service/src/app", "src":"xxx.constant.ftl", "ddir":"/src/app", "dest":"{{module.name}}.constant.ts"},
+  
+        {"sdir":"/skeleton_service/src/app/service", "src":"xxx.service.ftl", "ddir":"/src/app/service", "dest":"{{module.name}}.service.ts"}
+      ]
+    }
+    

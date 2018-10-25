@@ -1,0 +1,48 @@
+// @import "~ng-zorro-antd/src/ng-zorro-antd.min.css";
+.datatable .k-checkbox-label, .k-radio-label {
+  margin-top: 2px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+.datatable .datatable-header {
+  margin-top: 2px;
+  left: 0px;
+}
+
+.datatable .k-grid tr.k-state-selected, .k-grid td.k-state-selected {
+  background-color: rgba(255,99,88,.25);
+}
+
+.datatable .k-grid th {
+  padding: 0px;
+  text-align: center;
+}
+
+.datatable .k-grid-table > tbody > tr:hover {
+  background-color: #eaf0fd; // height: 60px;
+}
+
+.datatable .k-grid {
+  color: #999999;
+  font-size: 13px;
+  font-family: "microsoft yahei", Arial;
+  font-weight: normal;
+}
+
+.datatable .k-filtercell .k-filtercell-wrapper > .k-textbox {
+  color: #999999;
+  font-size: 13px;
+  font-family: "microsoft yahei", Arial;
+  font-weight: lighter;
+  margin-top:2px;
+}
+
+.datatable .k-grid thead tr {
+  height: 30px;
+  line-height: 30px;
+  color: #333333;
+  font-size: 12px;
+  font-family: "microsoft yahei", Arial;
+  font-weight: bold;
+}

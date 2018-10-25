@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_component/waf_tag@1.0.0",
+        "scope": "@waf_component",
+        "escapedName": "@waf_component%2fwaf_tag",
+        "name": "@waf_component/waf_tag",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework\\node_modules\\@unm\\unm_alarm"
+    ]
+  ],
+  "_from": "@waf_component/waf_tag@1.0.0",
+  "_id": "@waf_component/waf_tag@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_component/waf_tag",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_component/waf_tag@1.0.0",
+    "scope": "@waf_component",
+    "escapedName": "@waf_component%2fwaf_tag",
+    "name": "@waf_component/waf_tag",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/@unm/unm_alarm"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_component%2fwaf_tag/-/waf_tag-1.0.0.tgz",
+  "_shasum": "44fb79d18578c85d214073b671b5fc99a330de73",
+  "_shrinkwrap": null,
+  "_spec": "@waf_component/waf_tag@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework\\node_modules\\@unm\\unm_alarm",
+  "dependencies": {
+    "@waf_service/context": "1.0.0"
+  },
+  "description": "waf_tag模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "44fb79d18578c85d214073b671b5fc99a330de73",
+    "tarball": "http://10.170.190.45:4873/@waf_component%2fwaf_tag/-/waf_tag-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_component/waf_tag",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

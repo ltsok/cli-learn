@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<polygon fill="#BFBFBF" points="32,7 0,7 0,23 32,23 32,7 	"/>
+	<polyline fill="#FFFFFF" points="31,8 31,22 1,22 1,8 31,8 	"/>
+	<polygon fill="#5D6061" points="30.042,9 2.042,9 2.042,21 30.042,21 30.042,9 	"/>
+	<polyline fill="#FFFFFF" points="29.142,9.9 29.142,20.1 2.942,20.1 2.942,9.9 29.142,9.9 	"/>
+	<g>
+		<rect x="4" y="11" fill="#646768" width="24" height="8"/>
+		<rect x="4.958" y="12.042" fill="#FFFFFF" width="2" height="2"/>
+		<rect x="7.979" y="12.042" fill="#FFFFFF" width="2" height="2"/>
+		<rect x="11" y="12.042" fill="#FFFFFF" width="2" height="2"/>
+		<rect x="25.979" y="12.042" fill="#FFFFFF" width="1" height="6.042"/>
+		<rect x="4.958" y="16.083" fill="#FFFFFF" width="2" height="2"/>
+		<rect x="7.979" y="16.083" fill="#FFFFFF" width="2" height="2"/>
+		<rect x="11" y="16.083" fill="#FFFFFF" width="2" height="2"/>
+		<polygon fill="#FFFFFF" points="19.948,14.073 18.969,14.073 18.969,13.052 16.969,13.052 16.969,14.073 15.99,14.073 
+			15.99,16.073 16.969,16.073 16.969,17.094 18.969,17.094 18.969,16.073 19.948,16.073 		"/>
+		<polygon fill="#FFFFFF" points="24.99,14.073 24.01,14.073 24.01,13.052 22.01,13.052 22.01,14.073 21.031,14.073 21.031,16.073 
+			22.01,16.073 22.01,17.094 24.01,17.094 24.01,16.073 24.99,16.073 		"/>
+	</g>
+</g>
+</svg>

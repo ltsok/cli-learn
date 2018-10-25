@@ -1,0 +1,20 @@
+<ul class="submenu">
+
+  <div *ngFor="let rootMenuItem of rootMenuItems">
+
+    <!-- 无子菜单 -->
+    <li class="first-menu" *ngIf='rootMenuItem.children.length <= 0' (click)='onMenuItemClick(rootMenuItem)'>
+      <span class="title" [ngClass]="{'submenu-selected':select.get(rootMenuItem.id)}">{{rootMenuItem.name | translate}}</span>
+    </li>
+
+    <!-- 有子菜单 -->
+    <li class="first-menu" *ngIf='rootMenuItem.children.length > 0'>
+      <span class="title" [ngClass]="{'submenu-group-selected':selectGroup.get(rootMenuItem.id)}" (click)='onOpen(rootMenuItem)'>{{rootMenuItem.name | translate}}<i class="waffont" [ngClass]="{'waf-down':!open.get(rootMenuItem.id),'waf-up':open.get(rootMenuItem.id)}"></i></span>
+      <ul [ngStyle]="{'display':open.get(rootMenuItem.id) ? 'block' : 'none'}">
+        <li class="second-menu" *ngFor="let secondMenuItem of rootMenuItem.children" (click)="onMenuItemClick(secondMenuItem)">
+          <span class="title" [ngClass]="{'submenu-selected':select.get(secondMenuItem.id)}">{{secondMenuItem.name | translate}}</span>
+        </li>
+      </ul>
+    </li>
+  </div>
+</ul>

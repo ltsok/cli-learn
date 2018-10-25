@@ -1,0 +1,9 @@
+<drag-drop width="100%">
+  <div class="row-content" nz-row nzGutter="16">
+    <div *ngFor="let item of items" class="col-content" nz-col nzSpan="{{item.size}}">
+      <d-item class="left">
+        <div #eachDiv id="{{item.id}}"></div>
+      </d-item>
+    </div>
+  </div>
+</drag-drop>

@@ -1,0 +1,8 @@
+<div class="outer">
+  <pm-conditions [isCurrent]="true" [isQuerying]="isQuerying" (onClickQuery)="onClickQuery($event)"></pm-conditions>
+  <!-- <button nz-button nzType="cancel" (click)="getConditions()">数据</button> -->
+  <!-- {{conditions|json}} -->
+  <br>
+
+  <pm-table [data]="data" [total]="total" (onExport)="doExport($event)" (onPageIndexChanged)="onPagerChange($event)"></pm-table>
+</div>

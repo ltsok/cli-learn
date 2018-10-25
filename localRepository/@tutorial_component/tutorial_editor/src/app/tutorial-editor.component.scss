@@ -1,0 +1,37 @@
+//编辑区
+.editor {
+  position: relative;
+  margin-top: 15px;
+  margin-left: 15px;
+  text-align: left;
+  min-height: 750px;
+  &:hover .editor-modify {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+//编辑按钮
+.editor-modify {
+  position: fixed;
+  top: 112px;
+  right: 18%;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+//锚点
+.toc-container {
+  width: 12%;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  text-align: left;
+}
+
+.quill-toolbar {
+  background: #f0f2f5;
+}
+

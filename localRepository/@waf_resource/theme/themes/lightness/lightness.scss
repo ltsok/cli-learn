@@ -1,0 +1,21 @@
+:root { 
+
+    // WAF配色变量
+    --waf-primary-color-1: #d3bebe; 
+    --waf-primary-color-2: #a08484;
+    --waf-primary-color-3: #0a0a0a;
+    --waf-secondary-color-1: #f46e91;
+    --waf-secondary-color-2: #f46e91;
+    --waf-ornament-color-1: #f4b36e;
+    --waf-ornament-color-2: #f4b36e;
+    --waf-ornament-color-3: #f4b36e;
+
+    // WAF框架布局变量(根据不同模板有差异)
+    --waf-shortcut-top: 0px;
+    --waf-shortcut-height: 48px;
+    --waf-menu-top: 48px;
+    --waf-menu-height: 48px;
+    --waf-domain-top: 110px;
+    --waf-submenu-top: 115px;
+    --waf-submenu-width: 200px;
+}

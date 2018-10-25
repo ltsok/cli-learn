@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<path fill="#C6C6C6" d="M30.84,1H1.16C1.072,1,1,1.072,1,1.16v29.389c0,0.088,0.071,0.16,0.16,0.16h29.681
+	c0.088,0,0.159-0.071,0.159-0.159V1.16C31,1.072,30.929,1,30.84,1L30.84,1z"/>
+<polyline fill="#F5F5F5" points="30,2 30,29.958 2,29.958 2,2 30,2 "/>
+<path fill="#C4C4C4" d="M28.503,28.854H3.414c-0.252,0-0.456-0.204-0.456-0.456V3.518c0-0.252,0.204-0.456,0.456-0.456h25.088
+	c0.252,0,0.456,0.204,0.456,0.456v24.88C28.958,28.65,28.754,28.854,28.503,28.854z"/>
+<g>
+	<rect x="7.034" y="9.063" fill="#FFFFFF" width="6.967" height="2.06"/>
+	<rect x="17.999" y="9.063" fill="#FFFFFF" width="6.967" height="2.06"/>
+	<rect x="7.034" y="14.031" fill="#FFFFFF" width="6.967" height="2.06"/>
+	<rect x="17.999" y="14.031" fill="#FFFFFF" width="6.967" height="2.06"/>
+	<path fill="#FFFFFF" d="M4.974,7.004v17.993h22.052V7.004H4.974z M25.966,22.997H6.034v-4.968h19.931V22.997z M25.966,17H6.034
+		v-3.938h19.931V17z M25.966,12.032H6.034V8.094h19.931V12.032z"/>
+	<rect x="7.034" y="20.029" fill="#FFFFFF" width="17.993" height="2.06"/>
+</g>
+</svg>

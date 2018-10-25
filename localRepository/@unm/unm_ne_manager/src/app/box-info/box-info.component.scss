@@ -1,0 +1,79 @@
+ div.box-view {
+   width: 540px;
+   height: 550px;
+   background-color: #d7dce3;
+   margin-left: 30px;
+   margin-top: 35px;
+   margin-bottom: 65px;
+   vertical-align: top;
+   display: inline-block;
+   overflow: auto;
+   padding: 12px;
+ }
+
+ div.right-area {
+   width: calc(100% - 585px);
+   height: 550px;
+   display: inline-block;
+   margin-top: 35px;
+   margin-left: 12px;
+ }
+
+ div.alarm-info {
+   padding-top: 30px;
+   padding-left: 65px;
+   border: 1px solid #e0e0e0;
+ }
+
+ div.alarm-info>h4 {
+   margin-bottom: 28px;
+ }
+
+ div.alarm-info>div {
+   margin: 14px 0;
+ }
+
+ div.alarm-info>div>i {
+   height: 12px;
+   width: 12px;
+   margin-right: 20px;
+   display: inline-block;
+ }
+
+ div.alarm-info>div>span {
+   margin-right: 30px;
+ }
+
+ div.dish-ports ::ng-deep.k-grid .k-grid-aria-root {
+   width: 100%;
+   font-size: 13px;
+ }
+
+ div.dish-ports ::ng-deep .k-grid td {
+   border-bottom: 1px solid #e3e3e3;
+ }
+
+ div.dish-ports ::ng-deep .k-grid td,
+ div.dish-ports ::ng-deep .k-grid th {
+   text-align: center;
+   padding: 8px 0;
+ }
+
+ div.dish-ports ::ng-deep.k-grid tr.k-alt,
+ div.dish-ports ::ng-deep.k-alt {
+   background-color: #f8f8f8;
+ }
+
+ div.buttons {
+   margin-top: 15px;
+   padding-left: 60px;
+ }
+
+ div.buttons>button {
+   margin-right: 12px;
+ }
+
+ div.buttons>button:hover {
+   background-color: #44a5ff;
+   color: white;
+ }

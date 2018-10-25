@@ -1,0 +1,134 @@
+<div style="position:relative;" id="datatable-{{me}}" class="datatable"
+     [style.width]="_width">
+  <div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+    <div
+      style="width: 100%;height:30px;text-align: right;border-style:solid; border-width: 1px;border-top-color:transparent;border-bottom-color:transparent;border-left-color: rgba(224, 224, 224, 1);border-right-color: rgba(224, 224, 224, 1);">
+      <a *ngIf="exportable" class="gridTool" style="margin-right:16px;" title="{{'unm.report.grid.export' | translate}}" nz-popover
+         [(nzVisible)]="isExportVisible" nzTrigger="click" [nzContent]="exportTemplate" nzPlacement="bottomRight">
+        <i
+          [ngClass]="{'fhfont fh-daochu': !isExporting,'anticon anticon-spin anticon-loading': isExporting,'processing': isExporting}"></i>
+      </a>
+      <a *ngIf="colConfigable" class="gridTool" (click)="showColTransfer()">
+        <i class="fhfont fh-lieshezhi"></i>
+      </a>
+      <a *ngIf="filterable" class="gridTool" title="{{'unm.report.grid.filter' | translate}}" (click)="isfilterable=!isfilterable">
+        <i class="fhfont fh-guolv"></i>
+      </a>
+      <a *ngIf="addable" class="gridTool" title="{{'unm.report.grid.filter' | translate}}" (click)="onAddClicked()">
+        <i class="fhfont fh-xinjian"></i>
+      </a>
+      <div *ngIf="batchOperable" style="float:right; height:18px; margin: 5px 16px 5px 0px; border:1px solid rgba(224, 224, 224, 1);">
+      </div>
+      <a *ngIf="batchOperable" class="gridTool" title="{{'unm.report.grid.filter' | translate}}" (click)="onBatchClicked($event);">
+        <i class="fhfont fh-piliangcaozuo" style="display:inline-block;" *ngIf="!isBatchOper"></i>
+        <i class="fhfont fh-liebiaoqueren" style="display:inline-block;" *ngIf="isBatchOper"></i>
+        <label style="font-size:14px;display:inline-block;margin-left:4px;"><a *ngIf="!isBatchOper">批量</a><a
+          *ngIf="isBatchOper">完成</a></label>
+      </a>
+      <ng-template #exportTemplate>
+        <ul class="colSetList">
+          <li>
+            <a (click)="doExport('html')"> html </a>
+          </li>
+          <li>
+            <a (click)="doExport('excel')"> excel </a>
+          </li>
+        </ul>
+      </ng-template>
+      <ng-template #colsConfigTemplate>
+        <nz-checkbox-wrapper (nzOnChange)="colSetChange($event)">
+          <ul class="colSetList">
+            <li *ngFor="let col of allCols;let index = index">
+              <label nz-checkbox [nzValue]="col.name" [(ngModel)]="!col.hidden">{{col.name}}</label>
+            </li>
+          </ul>
+        </nz-checkbox-wrapper>
+      </ng-template>
+      <nz-modal [(nzVisible)]="isColsConfigVisible" [nzClosable]="false"
+                nzTitle="{{'unm.report.grid.colConfigs' | translate}}"
+                (nzOnOk)="transferOK()" (nzOnCancel)="transferCancel()">
+        <nz-transfer [nzDataSource]="transferList" [nzTitles]="['', '']" (nzChange)="transferChange($event)">
+        </nz-transfer>
+      </nz-modal>
+      <div class="datatable-toolbar">
+        <ng-content select="waf-datatable-toolbar"></ng-content>
+      </div>
+    </div>
+    <div *ngIf="isBatchOper"
+         style="margin-top:-2px; height:50px; padding:10px 0px 10px; width: 100%;text-align: right;border-style:solid; border-width: 1px;border-top-color:transparent;border-bottom-color:transparent;border-left-color: rgba(224, 224, 224, 1);border-right-color: rgba(224, 224, 224, 1);">
+      <a class="gridTool" [ngClass]="{'firstCmd':i == 0}" *ngFor="let cmd of userCmds;let i = index" title="{{cmd.title}}" (click)="onUserDefCmdClick(i);">
+        <i class="fhfont {{cmd.name}}" style="display:inline-block;"></i> <label
+        style="font-size:14px;display:inline-block;margin-left:4px;">{{cmd.title}}</label>
+      </a>
+    </div>
+  </div>
+
+  <div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+    <kendo-grid #kgrid [data]="gridView" [loading]="isGridLoading" [style.height]="_height" [rowHeight]="35" [resizable]="true"
+                style="display:grid;width:100%"
+                [sortable]="{allowUnsort: allowUnsort, mode: multiple ? 'multiple' : 'single' }" [pageSize]="take"
+                [skip]="skip" [sort]="sort"
+                [filter]="filter" [scrollable]="'virtual'" [filterable]="isfilterable" (sortChange)="sortChange($event)"
+                (filterChange)="filterChange($event)"
+                (pageChange)="innerPageChange($event)" [selectable]="selectableSettings" [kendoGridSelectBy]="selectBy"
+                [selectedKeys]="mySelection" (selectedKeysChange)="onSelectedKeysChange($event)">
+      <kendo-grid-checkbox-column [hidden]="!selectable" [width]="40" [resizable]="false">
+        <ng-template kendoGridHeaderTemplate>
+          <div style="padding-left:12.5px;">
+            <input class="k-checkbox" id="selectAllCheckboxId" kendoGridSelectAllCheckbox [state]="selectAllState" (selectAllChange)="onSelectAllChange($event)">
+            <label class="k-checkbox-label datatable-header" for="selectAllCheckboxId"></label>
+          </div>
+        </ng-template>
+      </kendo-grid-checkbox-column>
+      <ng-container *ngFor="let col of allCols;let i = index">
+        <ng-container *ngIf="col.command==true">
+          <kendo-grid-command-column title="{{col.name}}" width="{{col.width}}">
+            <ng-template kendoGridCellTemplate let-isNew="isNew" let-dataItem>
+              <a class="tableGridTool" *ngFor="let commandItem of col.items;let j = index" title="{{commandItem.title}}"
+                 (click)="commandClicked({commandIndex:j, dateItem:dataItem})">
+                <i class="fhfont {{commandItem.name}}"></i>
+              </a>
+            </ng-template>
+          </kendo-grid-command-column>
+        </ng-container>
+        <ng-container *ngIf="col.command!=true && col.type=='imgText'">
+          <kendo-grid-column field="{{i}}" [hidden]="col.hidden" [width]="col.width" [minResizableWidth]="60">
+            <ng-template kendoGridHeaderTemplate let-column>
+              {{col.name}}
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <div class="whole-cell" [title]="dataItem[i].img.title">
+                <i class="fhfont {{dataItem[i].img.name}} tableGridTool" style="display:inline-block;" [style.color]="dataItem[i].img.color"></i>
+                <label style="display:inline-block;">{{dataItem[i].text}}</label>
+              </div>
+            </ng-template>
+          </kendo-grid-column>
+        </ng-container>
+        <ng-container *ngIf="col.command!=true && (col.type!='imgText' && col.type!='img')">
+          <kendo-grid-column field="{{i}}" [hidden]="col.hidden" [width]="col.width" [minResizableWidth]="60">
+            <ng-template kendoGridHeaderTemplate let-column>
+              {{col.name}}
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <div class="whole-cell" [title]="dataItem[i]">
+                {{dataItem[i]}}
+              </div>
+            </ng-template>
+          </kendo-grid-column>
+        </ng-container>
+      </ng-container>
+<!--      <ng-template kendoGridDetailTemplate let-dataItem>
+        <ng-content select="waf-datatable-row-detail"></ng-content>
+      </ng-template>-->
+    </kendo-grid>
+  </div>
+  <div id="datatablepagination" style="margin-top:10px;">
+    <nz-pagination [(nzPageIndex)]="pageIndex" [nzTotal]="total" [(nzPageSize)]="pageSize" [nzShowTotal]="rangeTemplate"
+                   nzShowSizeChanger
+                   [nzPageSizeOptions]="pageSizeOptions" (nzPageIndexChange)="onPagerChange(1)"
+                   (nzPageSizeChange)="onPagerChange(2)"></nz-pagination>
+    <ng-template #rangeTemplate let-range="range" let-total>
+      {{range[0]>range[1]?range[1]:range[0]}}-{{range[1]>total?total:range[1]}} / {{total}}
+    </ng-template>
+  </div>
+</div>

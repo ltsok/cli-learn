@@ -1,0 +1,64 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_service/logger@1.0.0",
+        "scope": "@waf_service",
+        "escapedName": "@waf_service%2flogger",
+        "name": "@waf_service/logger",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_service/logger@1.0.0",
+  "_id": "@waf_service/logger@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_service/logger",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_service/logger@1.0.0",
+    "scope": "@waf_service",
+    "escapedName": "@waf_service%2flogger",
+    "name": "@waf_service/logger",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@waf_service/cache"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_service%2flogger/-/logger-1.0.0.tgz",
+  "_shasum": "181084ffe5b946461ab7d002281f34bbc52c9fae",
+  "_shrinkwrap": null,
+  "_spec": "@waf_service/logger@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "loglevel": "^1.6.0",
+    "loglevel-plugin-prefix": "^0.5.3"
+  },
+  "description": "logger模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "181084ffe5b946461ab7d002281f34bbc52c9fae",
+    "tarball": "http://10.170.190.45:4873/@waf_service%2flogger/-/logger-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_service/logger",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

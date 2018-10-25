@@ -1,0 +1,70 @@
+<div style="margin-left: 30px;">
+  <nz-radio-group [(ngModel)]="defaultBox" (ngModelChange)="locationBox(boxView)">
+    <label *ngFor="let box of boxs" nz-radio-button nzValue="{{box.title}}">{{box.title}}</label>
+  </nz-radio-group>
+</div>
+<div #boxView class="box-view">
+  <box-view *ngFor="let box of boxs" [dishData]="box.dishs" [boxTitle]="box.title" [adecimal]="box.slotNoDisplayMode"
+    (selectClick)="listenSelect($event)"></box-view>
+</div>
+<!-- 单盘告警状态 -->
+<div *ngIf="!isShowPorts" class="right-area alarm-info">
+  <h4>{{'unm.box.alarm_title'|translate}}</h4>
+  <div><i style="background-color: #f46e84"></i><span>{{'unm.box.alarm_urgency'|translate}}：</span><label>0</label></div>
+  <div><i style="background-color: #f49a6e"></i><span>{{'unm.box.alarm_main'|translate}}：</span><label>0</label></div>
+  <div><i style="background-color: #f4cd6e"></i><span>{{'unm.box.alarm_secondary'|translate}}：</span><label>0</label></div>
+  <div><i style="background-color: #6ea7f4"></i><span>{{'unm.box.alarm_prompt'|translate}}：</span><label>0</label></div>
+</div>
+<!-- 单盘端口列表 -->
+<div *ngIf="isShowPorts" (click)="listenGridViewClick($event)" class="right-area dish-ports">
+  <h4 style="margin-bottom: 32px">{{dishName}} {{'unm.box.port.title'|translate}}</h4>
+  <kendo-grid [data]="gridView" [height]="434" [sortable]="{allowUnsort: allowUnsort,mode: multiple ? 'multiple' : 'single'}"
+    [sort]="sort" (sortChange)="sortChange($event)">
+    <kendo-grid-column field="portName" title="{{'unm.box.port.name'|translate}}" width="75">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{dataItem.portName}}">{{dataItem.portName}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="portRemark" title="{{'unm.box.port.labeled'|translate}}" width="62">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{dataItem.portRemark}}">{{dataItem.portRemark}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="portNo" title="{{'unm.box.port.number'|translate}}" width="55">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{dataItem.portNo}}">{{dataItem.portNo}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="projectStatus" title="{{'unm.box.port.status'|translate}}" width="67">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{dataItem.projectStatus===0?'正常态':'工程态'}}">{{dataItem.projectStatus===0?'正常态':'工程态'}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="portTopoStatus" title="{{'unm.box.port.fiber'|translate}}" width="91">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{conversionFiber(dataItem.portTopoStatus)}}">{{conversionFiber(dataItem.portTopoStatus)}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="inWaveBandLength" title="{{'unm.box.port.collect'|translate}}" width="96">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{dataItem.inWaveBandLength}}">{{dataItem.inWaveBandLength}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="outWaveBandLength" title="{{'unm.box.port.send'|translate}}" width="102">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{dataItem.outWaveBandLength}}">{{dataItem.outWaveBandLength}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="portDirection" title="{{'unm.box.port.direction'|translate}}" width="80">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span style="white-space: nowrap" title="{{conversionDirection(dataItem.portDirection)}}">{{conversionDirection(dataItem.portDirection)}}</span>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+  <div class="buttons">
+    <button nz-button (click)="alarmClick()" nzType="default">{{'unm.alarm.query.current'|translate}}</button>
+    <button nz-button nzType="default">{{'unm.pm.query.current'|translate}}</button>
+    <button nz-button nzType="default">{{'unm.pm.query.history'|translate}}</button>
+    <button nz-button nzType="default">{{'unm.box.port.analysis'|translate}}</button>
+  </div>
+</div>

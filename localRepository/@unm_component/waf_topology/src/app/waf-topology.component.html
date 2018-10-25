@@ -1,0 +1,65 @@
+<div style="position:relative;" id="topology-{{me}}" class="topology"
+     [style.width]="_width" [style.height]="_height">
+  <div id="canvas-{{me}}" style="width:100%;height:100%;position:relative;">
+    <div id="overview-{{me}}" [style.width]="_overViewWidth" [style.height]="_overViewHeight"
+         [style.left]="_overViewLeft" [style.right]="_overViewRight" [style.bottom]="_overViewBottom"
+         style="position:absolute;background: #FFF;"></div>
+    <div id="toolbar-{{me}}" class="toolbar">
+      <ul class="icon_lists">
+        <li (click)="iconSelected(0);">
+          <i class="icon fhfont fh-fanhui"></i>
+        </li>
+        <li (click)="iconSelected(1, true);">
+          <i class="icon fhfont fh-shangxiazuan"></i>
+        </li>
+        <li (click)="iconSelected(2, true);">
+          <i class="icon fhfont fh-kuangxuan"></i>
+        </li>
+        <li (click)="iconSelected(3, true);">
+          <i class="icon fhfont fh-guangbiaozhuashou"></i>
+        </li>
+        <li (click)="iconSelected(4);">
+          <i class="icon fhfont fh-suoxiao"></i>
+        </li>
+        <li (click)="iconSelected(5);">
+          <i class="icon fhfont fh-fangda"></i>
+        </li>
+        <li (click)="iconSelected(6);">
+          <i class="icon fhfont fh-yuanshidaxiao"></i>
+        </li>
+        <li (click)="iconSelected(7);">
+          <i class="icon fhfont fh-shuaxin"></i>
+        </li>
+        <li (click)="iconSelected(8);">
+          <i class="icon fhfont fh-baocun"></i>
+        </li>
+        <li (click)="iconSelected(9);">
+          <i class="icon fhfont fh-chakan"></i>
+        </li>
+      </ul>
+      <div class="alarm">
+        <div class="col">
+          <div class="icon0"></div>
+          <div class="label">紧急</div>
+        </div>
+        <div class="col">
+          <div class="icon1"></div>
+          <div class="label">重要</div>
+        </div>
+        <div class="col">
+          <div class="icon2"></div>
+          <div class="label">次要</div>
+        </div>
+        <div class="col">
+          <div class="icon3"></div>
+          <div class="label">提示</div>
+        </div>
+      </div>
+      <div class="path">.
+        <nz-select style="width: 300px;" [(ngModel)]="curPath" (ngModelChange)="pathChanged();">
+          <nz-option *ngFor="let option of visitedPath" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+        </nz-select>
+      </div>
+    </div>
+  </div>
+</div>

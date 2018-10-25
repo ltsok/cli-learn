@@ -1,0 +1,44 @@
+<div class="shortcut">
+
+  <!-- 左侧系统logo -->
+  <img src="assets/logo.png" alt='{{"app.logo" | translate}}'>
+
+  <!-- 右侧快捷菜单 -->
+  <nz-dropdown class="menu-sc" [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
+    <a nz-dropdown>
+      <i class="waffont waf-user"></i>
+      <i class="user-name" nz-tooltip nzTitle="{{userName}}" nzPlacement="bottomRight">{{shortUserName}}</i>
+    </a>
+    <ul nz-menu>
+      <li nz-menu-item *ngFor="let item of shortcutItems" (click)="onClickShortcut(item)">
+        <i class="fhfont {{item.icon}}" style="padding-right: 14px;"></i>{{item.name | translate}}</li>
+      <li nz-menu-divider *ngIf="shortcutItems.length > 0"></li>
+      <li nz-menu-item (click)="onClickLogout()">
+        <i class="waffont waf-logout" style="padding-right: 14px;"></i>{{"shortcut.logout" | translate}}</li>
+    </ul>
+  </nz-dropdown>
+
+  <!-- 右侧监控面板 -->
+  <div class="menu-sv">
+    <i *ngFor="let groupNo of svMap.keys()">
+      <i *ngFor="let item of svMap.get(groupNo)" class="menu-sv-icon" (click)="onClickSupervisory(item)" nz-tooltip nzTitle="{{item.name | translate}}"
+        nzPlacement="bottomLeft">
+        <span class="icon-group" [ngClass]="{'flash animated infinite':svFlashMap.get(item.id)}">
+          <i class="fhfont {{item.icon}} icon-primary" [ngStyle]="{'color':(item.param && item.param.iconColor)?item.param.iconColor:'var(--waf-primary-color-2)'}"></i>
+          <i *ngIf='item.secondaryIcon' class="fhfont {{item.secondaryIcon}} icon-secondary" [ngStyle]="{'color':(item.param && item.param.secondaryIconColor)?item.param.secondaryIconColor:'var(--waf-primary-color-2)'}"></i>
+        </span>
+        <span *ngIf='svNumMap.get(item.id) != -1' class="icon-num">{{svNumMap.get(item.id)}}</span>
+      </i>
+      <i class="waffont waf-split-line icon-split"></i>
+    </i>
+  </div>
+
+  <!-- 弹出信息 -->
+  <div *ngIf='isVisibleComp'>
+    <nz-modal [nzWidth]="'50%'" [nzStyle]="{ top: '40px',right:'30px','margin-right':'0px'}" [nzMaskStyle]="{ 'background-color':'#000000', opacity:'0.1'}"
+      [(nzVisible)]="isVisibleComp" [nzFooter]='null' [nzClosable]='false' (nzOnCancel)="onCancelComp()" (nzOnOk)="onOKComp()"
+      [nzContent]='component'>
+    </nz-modal>
+  </div>
+
+</div>

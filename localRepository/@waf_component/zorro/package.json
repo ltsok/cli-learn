@@ -1,0 +1,63 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_component/zorro@1.0.0",
+        "scope": "@waf_component",
+        "escapedName": "@waf_component%2fzorro",
+        "name": "@waf_component/zorro",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_component/zorro@1.0.0",
+  "_id": "@waf_component/zorro@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_component/zorro",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_component/zorro@1.0.0",
+    "scope": "@waf_component",
+    "escapedName": "@waf_component%2fzorro",
+    "name": "@waf_component/zorro",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@waf_component/waf_layout"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_component%2fzorro/-/zorro-1.0.0.tgz",
+  "_shasum": "598eb7ac96a0ba9c729e8c7b4d8012c2ac1b2f51",
+  "_shrinkwrap": null,
+  "_spec": "@waf_component/zorro@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "ng-zorro-antd": "1.5.0"
+  },
+  "description": "zorro模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "598eb7ac96a0ba9c729e8c7b4d8012c2ac1b2f51",
+    "tarball": "http://10.170.190.45:4873/@waf_component%2fzorro/-/zorro-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_component/zorro",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

@@ -1,0 +1,60 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_resource/theme@1.0.0",
+        "scope": "@waf_resource",
+        "escapedName": "@waf_resource%2ftheme",
+        "name": "@waf_resource/theme",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_resource/theme@1.0.0",
+  "_id": "@waf_resource/theme@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_resource/theme",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_resource/theme@1.0.0",
+    "scope": "@waf_resource",
+    "escapedName": "@waf_resource%2ftheme",
+    "name": "@waf_resource/theme",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@waf_service/theme"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_resource%2ftheme/-/theme-1.0.0.tgz",
+  "_shasum": "cabe2c4a719bcbb6563c7cc4b3846d04ba3f4f0f",
+  "_shrinkwrap": null,
+  "_spec": "@waf_resource/theme@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {},
+  "description": "theme模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "cabe2c4a719bcbb6563c7cc4b3846d04ba3f4f0f",
+    "tarball": "http://10.170.190.45:4873/@waf_resource%2ftheme/-/theme-1.0.0.tgz"
+  },
+  "files": [
+    "themes",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_resource/theme",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

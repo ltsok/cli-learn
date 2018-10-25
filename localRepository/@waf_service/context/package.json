@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_service/context@1.0.0",
+        "scope": "@waf_service",
+        "escapedName": "@waf_service%2fcontext",
+        "name": "@waf_service/context",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_service/context@1.0.0",
+  "_id": "@waf_service/context@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_service/context",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_service/context@1.0.0",
+    "scope": "@waf_service",
+    "escapedName": "@waf_service%2fcontext",
+    "name": "@waf_service/context",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@tutorial/tutorial_cli",
+    "/@tutorial/tutorial_common",
+    "/@tutorial/tutorial_component",
+    "/@tutorial/tutorial_func",
+    "/@tutorial/tutorial_practice",
+    "/@tutorial/tutorial_service",
+    "/@tutorial/tutorial_start",
+    "/@tutorial/tutorial_templet",
+    "/@tutorial/tutorial_user",
+    "/@tutorial_component/tutorial_editor",
+    "/@unm/unm_alarm",
+    "/@unm/unm_common",
+    "/@unm/unm_logger",
+    "/@unm/unm_ne_manager",
+    "/@unm/unm_pm",
+    "/@unm/unm_report",
+    "/@unm/unm_settings",
+    "/@unm/unm_topo",
+    "/@unm/unm_user",
+    "/@unm_component/tree_selecter",
+    "/@unm_component/waf_icon",
+    "/@unm_templet/login",
+    "/@unm_templet/menu",
+    "/@unm_templet/shortcut",
+    "/@waf_component/waf_dragdrop",
+    "/@waf_component/waf_dropdown",
+    "/@waf_component/waf_layout",
+    "/@waf_component/waf_tag",
+    "/@waf_func/portal"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_service%2fcontext/-/context-1.0.0.tgz",
+  "_shasum": "acf3434003acf6d36aac577d5287957f9a874752",
+  "_shrinkwrap": null,
+  "_spec": "@waf_service/context@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "@waf_service/http": "1.0.0",
+    "@waf_service/push": "1.0.0",
+    "@waf_service/router": "1.0.0",
+    "@waf_service/theme": "1.0.0",
+    "conf-cfg-ini": "^1.0.9"
+  },
+  "description": "context模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "acf3434003acf6d36aac577d5287957f9a874752",
+    "tarball": "http://10.170.190.45:4873/@waf_service%2fcontext/-/context-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_service/context",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

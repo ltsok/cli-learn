@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@unm_templet/login@1.0.0",
+        "scope": "@unm_templet",
+        "escapedName": "@unm_templet%2flogin",
+        "name": "@unm_templet/login",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@unm_templet/login@1.0.0",
+  "_id": "@unm_templet/login@1.0.0",
+  "_inCache": true,
+  "_location": "/@unm_templet/login",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@unm_templet/login@1.0.0",
+    "scope": "@unm_templet",
+    "escapedName": "@unm_templet%2flogin",
+    "name": "@unm_templet/login",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@unm_templet%2flogin/-/login-1.0.0.tgz",
+  "_shasum": "0598e0a1f609095a4899fbecfbc5383f59012660",
+  "_shrinkwrap": null,
+  "_spec": "@unm_templet/login@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "@waf_service/context": "1.0.0"
+  },
+  "description": "login模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "0598e0a1f609095a4899fbecfbc5383f59012660",
+    "tarball": "http://10.170.190.45:4873/@unm_templet%2flogin/-/login-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@unm_templet/login",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

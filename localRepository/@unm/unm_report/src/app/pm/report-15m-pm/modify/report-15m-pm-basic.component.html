@@ -1,0 +1,85 @@
+<div class="pm-15m-create">
+  <div class="title">
+    修改任务
+  </div>
+  <div class="content">
+    <div class="left">
+      <nz-steps [nzCurrent]="0" nzDirection="vertical">
+        <nz-step nzTitle="任务信息"></nz-step>
+        <nz-step nzTitle="对象选择"></nz-step>
+        <nz-step nzTitle="性能代码"></nz-step>
+      </nz-steps>
+    </div>
+    <div class="right">
+      <div class="formTitle">
+        填写基本信息
+      </div>
+      <div class="formContent">
+        <form nz-form [formGroup]="mainForm" (ngSubmit)="submitForm()">
+          <nz-form-item nzType="flex" nzJustify="start" nzAlign="middle">
+            <nz-form-label nzSpan="3" nzFor="tastName" nzRequired>任务名称</nz-form-label>
+            <nz-form-control nzSpan="10">
+              <input nz-input formControlName="tastName">
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nzType="flex" nzJustify="start" nzAlign="top">
+            <nz-form-label nzSpan="3" nzRequired>任务类型</nz-form-label>
+            <nz-form-control nzSpan="10">
+              <nz-radio-group formControlName="taskType">
+                <div style="display:block;">
+                  <label nz-radio nzValue="0" >单次任务</label>
+                </div>
+                <div style="display:block; width:400px;">
+                  <label nz-radio nzValue="1" style="width:200px;">每间隔
+                    <nz-select style="width: 80px;" formControlName="selectedHour" nzPlaceHolder='--请选择--' [nzSize]='"small"'>
+                      <nz-option *ngFor="let hour of hours" [nzLabel]="hour.label" [nzValue]="hour"></nz-option>
+                    </nz-select>
+                    小时
+                  </label>
+                  <label nz-radio nzValue="2">每周
+                    <nz-select style="width: 120px;" formControlName="selectedWeek" nzPlaceHolder='--请选择--' [nzSize]='"small"'>
+                      <nz-option *ngFor="let week of weeks" [nzLabel]="week.label" [nzValue]="week"></nz-option>
+                    </nz-select>
+                  </label>
+                </div>
+                <div style="display:block;width:400px;">
+                  <label nz-radio nzValue="3" style="width:200px;">每间隔
+                    <nz-select style="width: 80px;" formControlName="selectedDay" nzPlaceHolder='--请选择--' [nzSize]='"small"'>
+                      <nz-option *ngFor="let day of days" [nzLabel]="day.label" [nzValue]="day"></nz-option>
+                    </nz-select>
+                    天
+                  </label>
+                  <label nz-radio nzValue="4">每月
+                    <nz-select style="width: 120px;" formControlName="selectedMonth" nzPlaceHolder='--请选择--' [nzSize]='"small"'>
+                      <nz-option *ngFor="let month of months" [nzLabel]="month.label" [nzValue]="month"></nz-option>
+                    </nz-select>
+                  </label>
+                </div>
+              </nz-radio-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nzType="flex" nzJustify="start" nzAlign="middle">
+            <nz-form-label nzSpan="3" nzRequired>任务起止时间</nz-form-label>
+            <nz-form-control nzSpan="10">
+              <nz-range-picker formControlName="taskDateRange" nzShowTime></nz-range-picker>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nzType="flex" nzJustify="start" nzAlign="middle">
+            <nz-form-label nzSpan="3" nzRequired>任务执行时间</nz-form-label>
+            <nz-form-control nzSpan="10">
+              <nz-date-picker nzShowTime formControlName="taskExecuteTime"></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+      <div class="formButtons">
+        <div nz-col nzSpan="3">
+          <button nz-button nzType="primary" (click)="next()">继续</button>
+        </div>
+        <div nz-col nzSpan="3">
+          <button nz-button nzType="default" (click)="cancel()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

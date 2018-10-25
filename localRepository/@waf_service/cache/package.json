@@ -1,0 +1,63 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@waf_service/cache@1.0.0",
+        "scope": "@waf_service",
+        "escapedName": "@waf_service%2fcache",
+        "name": "@waf_service/cache",
+        "rawSpec": "1.0.0",
+        "spec": "1.0.0",
+        "type": "version"
+      },
+      "D:\\rep\\unm_templet\\framework"
+    ]
+  ],
+  "_from": "@waf_service/cache@1.0.0",
+  "_id": "@waf_service/cache@1.0.0",
+  "_inCache": true,
+  "_location": "/@waf_service/cache",
+  "_nodeVersion": "8.11.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@waf_service/cache@1.0.0",
+    "scope": "@waf_service",
+    "escapedName": "@waf_service%2fcache",
+    "name": "@waf_service/cache",
+    "rawSpec": "1.0.0",
+    "spec": "1.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/",
+    "/@waf_service/storage"
+  ],
+  "_resolved": "http://10.170.190.45:4873/@waf_service%2fcache/-/cache-1.0.0.tgz",
+  "_shasum": "3822680cb96749d768a513c84af5fe0a09eca444",
+  "_shrinkwrap": null,
+  "_spec": "@waf_service/cache@1.0.0",
+  "_where": "D:\\rep\\unm_templet\\framework",
+  "dependencies": {
+    "@waf_service/logger": "1.0.0"
+  },
+  "description": "cache模块工程",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "3822680cb96749d768a513c84af5fe0a09eca444",
+    "tarball": "http://10.170.190.45:4873/@waf_service%2fcache/-/cache-1.0.0.tgz"
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "package.json"
+  ],
+  "license": "MIT",
+  "name": "@waf_service/cache",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "scripts": {},
+  "version": "1.0.0"
+}

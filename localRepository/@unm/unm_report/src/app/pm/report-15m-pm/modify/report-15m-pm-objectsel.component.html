@@ -1,0 +1,32 @@
+<div class="pm-15m-objectsel">
+  <div class="title">
+    修改任务
+  </div>
+  <div class="content">
+    <div class="left">
+      <nz-steps [nzCurrent]="1" nzDirection="vertical">
+        <nz-step nzTitle="任务信息"></nz-step>
+        <nz-step nzTitle="对象选择"></nz-step>
+        <nz-step nzTitle="性能代码"></nz-step>
+      </nz-steps>
+    </div>
+    <div class="right">
+      <div class="formTitle">
+        选择网元
+      </div>
+      <div class="formContent">
+      </div>
+      <div class="formButtons">
+        <div nz-col nzSpan="3" style="text-align: left;">
+          <button nz-button nzType="default" (click)="previous()">上一步</button>
+        </div>
+        <div nz-col nzSpan="3">
+          <button nz-button nzType="primary" (click)="next()">继续</button>
+        </div>
+        <div nz-col nzSpan="3">
+          <button nz-button nzType="default" (click)="cancel()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

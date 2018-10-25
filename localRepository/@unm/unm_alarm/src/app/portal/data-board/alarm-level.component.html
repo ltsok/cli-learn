@@ -1,0 +1,71 @@
+<div class="alarm-level">
+    <div style="padding:20px">
+        <div style="float:left;font-size:16px;color:#ffffff"> 告警统计-级别</div>
+        <div style="float:right">
+            <span (click)="refreshData()" nzPlacement="bottom" nz-tooltip nzTitle="刷新">
+                <i class="icon fhfont fh-shuaxin" style="margin-left:10px;"></i>
+            </span>
+
+        </div>
+    </div>
+    <div>
+        <waf-echart [style]="{'width':'350px','height':'350px'}"></waf-echart>
+    </div>
+    <div row1>
+        <div critical style="float:left;width:50%;padding-left:10%">
+            <div style="float:left">
+                紧急：
+            </div>
+            <div style="float:left">
+                {{almLevelStaticticData.critical}}
+            </div>
+            <div style="float:left;margin-left:10px">
+                {{almLevelStaticticData.critical/almLevelStaticticData.total | percent:'1.2-2'}}
+            </div>
+        </div>
+        <div major style="float:left;width:50%;padding-left:10%">
+            <div style="float:left">
+                主要：
+            </div>
+            <div style="float:left">
+                {{almLevelStaticticData.major}}
+            </div>
+            <div style="float:left;margin-left:10px">
+                {{almLevelStaticticData.major/almLevelStaticticData.total | percent:'1.2-2'}}
+            </div>
+        </div>
+    </div>
+    <div row2>
+        <div minor style="float:left;width:50%;padding-left:10%">
+            <div style="float:left">
+                次要：
+            </div>
+            <div style="float:left">
+                {{almLevelStaticticData.minor}}
+            </div>
+            <div style="float:left;margin-left:10px">
+                {{almLevelStaticticData.minor/almLevelStaticticData.total | percent:'1.2-2'}}
+            </div>
+        </div>
+        <div warning style="float:left;width:50%;padding-left:10%">
+            <div style="float:left">
+                提示：
+            </div>
+            <div style="float:left">
+                {{almLevelStaticticData.warning}}
+            </div>
+            <div style="float:left;margin-left:10px">
+                {{almLevelStaticticData.warning/almLevelStaticticData.total | percent:'1.2-2'}}
+            </div>
+        </div>
+    </div>
+
+    <div total style="float:left;width:50%;margin-left:35%">
+        <div style="float:left">
+            总告警：
+        </div>
+        <div style="float:left">
+            {{almLevelStaticticData.total}}
+        </div>
+    </div>
+</div>
